@@ -109,17 +109,24 @@ defmodule Bybit.REST.HTTPClient do
   defp normalize_headers(headers) when is_list(headers), do: headers
   defp normalize_headers(headers), do: List.wrap(headers)
 
-  defp normalize_response({:ok, %Req.Response{status: status, body: body}})
-       when status in 200..299 do
+  @doc false
+  def normalize_response({:ok, %Req.Response{status: status, body: body}})
+      when status in 200..299 do
     case body do
-      %{"code" => code, "msg" => msg} -> {:error, {:bybit_error, code, msg}}
-      _ -> {:ok, body}
+      %{"retCode" => ret_code, "retMsg" => ret_msg} when ret_code not in [0, "0"] ->
+        {:error, {:bybit_error, ret_code, ret_msg, body}}
+
+      %{"code" => code, "msg" => msg} ->
+        {:error, {:bybit_error, code, msg, body}}
+
+      _ ->
+        {:ok, body}
     end
   end
 
-  defp normalize_response({:ok, %Req.Response{status: status, body: body}}),
+  def normalize_response({:ok, %Req.Response{status: status, body: body}}),
     do: {:error, {:http_error, status, body}}
 
-  defp normalize_response({:error, reason}),
+  def normalize_response({:error, reason}),
     do: {:error, {:transport_error, {:req_error, reason}}}
 end
