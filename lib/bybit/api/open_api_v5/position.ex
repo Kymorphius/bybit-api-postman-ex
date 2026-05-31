@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec get_position_info_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_position_info(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Position Info
@@ -20,7 +20,7 @@ defmodule Bybit.API.OpenApiV5.Position do
   Required: category, symbol
   Optional: baseCoin, settleCoin, limit, cursor
   """
-  def get_position_info_v5(client, category, symbol, opts \\ []) do
+  def get_position_info(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -52,7 +52,7 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec switch_cross_isolated_margin_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec switch_cross_isolated_margin(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Switch Cross/Isolated Margin
@@ -60,7 +60,7 @@ defmodule Bybit.API.OpenApiV5.Position do
   Path: /v5/position/switch-isolated
   Requires signature: true
   """
-  def switch_cross_isolated_margin_v5(client, opts \\ []) do
+  def switch_cross_isolated_margin(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -93,14 +93,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec switch_position_mode_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec switch_position_mode(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Switch Position Mode
   Method: POST
   Path: /v5/position/switch-mode
   Requires signature: true
   """
-  def switch_position_mode_v5(client, opts \\ []) do
+  def switch_position_mode(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -133,14 +133,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec set_trading_stop_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_trading_stop(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Trading Stop
   Method: POST
   Path: /v5/position/trading-stop
   Requires signature: true
   """
-  def set_trading_stop_v5(client, opts \\ []) do
+  def set_trading_stop(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -173,14 +173,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec set_leverage_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_leverage(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Leverage
   Method: POST
   Path: /v5/position/set-leverage
   Requires signature: true
   """
-  def set_leverage_v5(client, opts \\ []) do
+  def set_leverage(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -213,14 +213,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec set_auto_add_margin_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_auto_add_margin(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Auto Add Margin
   Method: POST
   Path: /v5/position/set-auto-add-margin
   Requires signature: true
   """
-  def set_auto_add_margin_v5(client, opts \\ []) do
+  def set_auto_add_margin(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -253,7 +253,7 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec get_closed_pnl_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_closed_pnl(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Closed PnL
@@ -263,7 +263,7 @@ defmodule Bybit.API.OpenApiV5.Position do
   Required: category, symbol
   Optional: startTime, endTime, limit, cursor
   """
-  def get_closed_pnl_v5(client, category, symbol, opts \\ []) do
+  def get_closed_pnl(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -295,14 +295,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec set_tp_sl_mode_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_tp_sl_mode(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set TP/SL Mode
   Method: POST
   Path: /v5/position/set-tpsl-mode
   Requires signature: true
   """
-  def set_tp_sl_mode_v5(client, opts \\ []) do
+  def set_tp_sl_mode(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -335,14 +335,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec set_risk_limit_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_risk_limit(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Risk Limit
   Method: POST
   Path: /v5/position/set-risk-limit
   Requires signature: true
   """
-  def set_risk_limit_v5(client, opts \\ []) do
+  def set_risk_limit(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -375,14 +375,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec move_position_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec move_position(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Move Position
   Method: POST
   Path: /v5/position/move-positions
   Requires signature: true
   """
-  def move_position_v5(client, opts \\ []) do
+  def move_position(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -415,7 +415,7 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec get_move_position_history_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_move_position_history(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Move Position History
@@ -424,7 +424,7 @@ defmodule Bybit.API.OpenApiV5.Position do
   Requires signature: true
   Optional: category, symbol, startTime, endTime, status, blockTradeId, limit, cursor
   """
-  def get_move_position_history_v5(client, opts \\ []) do
+  def get_move_position_history(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -458,14 +458,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec add_or_reduce_margin_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec add_or_reduce_margin(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Add Or Reduce Margin
   Method: POST
   Path: /v5/position/add-margin
   Requires signature: true
   """
-  def add_or_reduce_margin_v5(client, opts \\ []) do
+  def add_or_reduce_margin(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -497,15 +497,14 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec confirm_new_risk_limit_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec confirm_new_risk_limit(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Confirm New Risk Limit
   Method: POST
   Path: /v5/position/confirm-pending-mmr
   Requires signature: true
   """
-  def confirm_new_risk_limit_v5(client, opts \\ []) do
+  def confirm_new_risk_limit(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -537,7 +536,7 @@ defmodule Bybit.API.OpenApiV5.Position do
     end
   end
 
-  @spec get_closed_options_positions_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_closed_options_positions(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Closed Options Positions
@@ -547,7 +546,7 @@ defmodule Bybit.API.OpenApiV5.Position do
   Required: category
   Optional: symbol, startTime, endTime, limit, cursor
   """
-  def get_closed_options_positions_v5(client, category, opts \\ []) do
+  def get_closed_options_positions(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

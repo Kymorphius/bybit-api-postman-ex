@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec accept_non_lp_quote_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec accept_non_lp_quote(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Accept non-LP Quote
   Method: POST
   Path: /v5/rfq/accept-other-quote
   Requires signature: true
   """
-  def accept_non_lp_quote_v5(client, opts \\ []) do
+  def accept_non_lp_quote(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -41,14 +41,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec cancel_all_quotes_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_all_quotes(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel All Quotes
   Method: POST
   Path: /v5/rfq/cancel-all-quotes
   Requires signature: true
   """
-  def cancel_all_quotes_v5(client) do
+  def cancel_all_quotes(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -72,14 +72,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec cancel_all_rfqs_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_all_rfqs(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel All RFQs
   Method: POST
   Path: /v5/rfq/cancel-all-rfq
   Requires signature: true
   """
-  def cancel_all_rfqs_v5(client) do
+  def cancel_all_rfqs(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -103,14 +103,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec cancel_quote_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_quote(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel Quote
   Method: POST
   Path: /v5/rfq/cancel-quote
   Requires signature: true
   """
-  def cancel_quote_v5(client, opts \\ []) do
+  def cancel_quote(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -142,14 +142,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec cancel_rfq_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_rfq(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel RFQ
   Method: POST
   Path: /v5/rfq/cancel-rfq
   Requires signature: true
   """
-  def cancel_rfq_v5(client, opts \\ []) do
+  def cancel_rfq(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -181,14 +181,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec get_rfq_configuration_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_rfq_configuration(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get RFQ Configuration
   Method: GET
   Path: /v5/rfq/config
   Requires signature: true
   """
-  def get_rfq_configuration_v5(client) do
+  def get_rfq_configuration(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -212,14 +212,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec create_quote_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_quote(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Quote
   Method: POST
   Path: /v5/rfq/create-quote
   Requires signature: true
   """
-  def create_quote_v5(client, opts \\ []) do
+  def create_quote(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -251,14 +251,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec create_rfq_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_rfq(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create RFQ
   Method: POST
   Path: /v5/rfq/create-rfq
   Requires signature: true
   """
-  def create_rfq_v5(client, opts \\ []) do
+  def create_rfq(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -290,14 +290,14 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec execute_quote_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec execute_quote(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Execute Quote
   Method: POST
   Path: /v5/rfq/execute-quote
   Requires signature: true
   """
-  def execute_quote_v5(client, opts \\ []) do
+  def execute_quote(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -329,7 +329,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec get_public_trades_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_public_trades(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Public Trades
   Method: GET
@@ -337,7 +337,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
   Requires signature: true
   Optional: startTime, endTime, limit, cursor
   """
-  def get_public_trades_v5(client, opts \\ []) do
+  def get_public_trades(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -525,7 +525,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
     end
   end
 
-  @spec get_trade_history_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_trade_history(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Trade History
   Method: GET
@@ -533,7 +533,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
   Requires signature: true
   Optional: rfqId, rfqLinkId, quoteId, quoteLinkId, traderType, status, limit, cursor
   """
-  def get_trade_history_v5(client, opts \\ []) do
+  def get_trade_history(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

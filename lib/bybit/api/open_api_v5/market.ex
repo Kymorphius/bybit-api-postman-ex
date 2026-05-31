@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_bybit_server_time_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_bybit_server_time(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Bybit Server Time
   Method: GET
   Path: /v5/market/time
   Requires signature: false
   """
-  def get_bybit_server_time_v5(client) do
+  def get_bybit_server_time(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -35,7 +35,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_kline_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_kline(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Kline
@@ -45,7 +45,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol, interval, limit
   Optional: category, start, end
   """
-  def get_kline_v5(client, symbol, interval, limit, opts \\ []) do
+  def get_kline(client, symbol, interval, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -70,7 +70,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_mark_price_kline_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_mark_price_kline(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Mark Price Kline
@@ -80,7 +80,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol, interval
   Optional: category, start, end, limit
   """
-  def get_mark_price_kline_v5(client, symbol, interval, opts \\ []) do
+  def get_mark_price_kline(client, symbol, interval, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -112,7 +112,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_index_price_kline_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_index_price_kline(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Index Price Kline
@@ -122,7 +122,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol, interval
   Optional: category, start, end, limit
   """
-  def get_index_price_kline_v5(client, symbol, interval, opts \\ []) do
+  def get_index_price_kline(client, symbol, interval, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -154,7 +154,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_premium_index_price_kline_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_premium_index_price_kline(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Premium Index Price Kline
@@ -164,7 +164,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol, interval
   Optional: category, start, end, limit
   """
-  def get_premium_index_price_kline_v5(client, symbol, interval, opts \\ []) do
+  def get_premium_index_price_kline(client, symbol, interval, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -196,7 +196,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_orderbook_v5(Bybit.Client.t(), term(), term(), term()) ::
+  @spec get_orderbook(Bybit.Client.t(), term(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Orderbook
@@ -205,7 +205,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Requires signature: true
   Required: category, symbol, limit
   """
-  def get_orderbook_v5(client, category, symbol, limit) do
+  def get_orderbook(client, category, symbol, limit) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -230,7 +230,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_instruments_info_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_instruments_info(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Instruments Info
@@ -240,7 +240,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, limit
   Optional: symbol, symbolType, status, baseCoin, cursor
   """
-  def get_instruments_info_v5(client, category, limit, opts \\ []) do
+  def get_instruments_info(client, category, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -273,7 +273,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_tickers_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_tickers(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Tickers
@@ -283,7 +283,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, baseCoin
   Optional: symbol, expDate
   """
-  def get_tickers_v5(client, category, baseCoin, opts \\ []) do
+  def get_tickers(client, category, baseCoin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -313,7 +313,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_funding_rate_history_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_funding_rate_history(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Funding Rate History
@@ -323,7 +323,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, symbol
   Optional: startTime, endTime, limit
   """
-  def get_funding_rate_history_v5(client, category, symbol, opts \\ []) do
+  def get_funding_rate_history(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -354,7 +354,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_risk_limit_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_risk_limit(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Risk Limit
@@ -364,7 +364,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, symbol
   Optional: cursor
   """
-  def get_risk_limit_v5(client, category, symbol, opts \\ []) do
+  def get_risk_limit(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -389,7 +389,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_open_interest_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_open_interest(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Open Interest
@@ -399,7 +399,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, symbol, intervalTime
   Optional: startTime, endTime, limit, cursor
   """
-  def get_open_interest_v5(client, category, symbol, intervalTime, opts \\ []) do
+  def get_open_interest(client, category, symbol, intervalTime, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -425,7 +425,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_insurance_pool_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_insurance_pool(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Insurance Pool
   Method: GET
@@ -433,7 +433,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Requires signature: false
   Optional: coin
   """
-  def get_insurance_pool_v5(client, opts \\ []) do
+  def get_insurance_pool(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -451,7 +451,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_recent_public_trades_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_recent_public_trades(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Recent Public Trades
@@ -461,7 +461,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category
   Optional: symbol, baseCoin, optionType, limit
   """
-  def get_recent_public_trades_v5(client, category, opts \\ []) do
+  def get_recent_public_trades(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -485,7 +485,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_delivery_price_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_delivery_price(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Delivery Price
@@ -495,7 +495,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, baseCoin, limit
   Optional: symbol, settleCoin, cursor
   """
-  def get_delivery_price_v5(client, category, baseCoin, limit, opts \\ []) do
+  def get_delivery_price(client, category, baseCoin, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -520,7 +520,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_long_short_ratio_v5(Bybit.Client.t(), term(), term(), term(), term(), Keyword.t()) ::
+  @spec get_long_short_ratio(Bybit.Client.t(), term(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Long Short Ratio
@@ -530,7 +530,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, symbol, period, limit
   Optional: startTime, endTime, cursor
   """
-  def get_long_short_ratio_v5(client, category, symbol, period, limit, opts \\ []) do
+  def get_long_short_ratio(client, category, symbol, period, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -556,7 +556,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_historical_volatility_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_historical_volatility(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Historical Volatility
@@ -566,7 +566,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category
   Optional: baseCoin, quoteCoin, period, startTime, endTime
   """
-  def get_historical_volatility_v5(client, category, opts \\ []) do
+  def get_historical_volatility(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -591,7 +591,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_adl_alert_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_adl_alert(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get ADL Alert
   Method: GET
@@ -599,7 +599,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Requires signature: true
   Optional: symbol
   """
-  def get_adl_alert_v5(client, opts \\ []) do
+  def get_adl_alert(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -623,7 +623,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_fee_group_structure_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_fee_group_structure(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Fee Group Structure
@@ -633,7 +633,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: productType
   Optional: groupId
   """
-  def get_fee_group_structure_v5(client, productType, opts \\ []) do
+  def get_fee_group_structure(client, productType, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -657,8 +657,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_index_price_components_v5(Bybit.Client.t(), term()) ::
-          {:ok, term()} | {:error, term()}
+  @spec get_index_price_components(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Index Price Components
   Method: GET
@@ -666,7 +665,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Requires signature: true
   Required: indexName
   """
-  def get_index_price_components_v5(client, indexName) do
+  def get_index_price_components(client, indexName) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -690,7 +689,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_new_delivery_price_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_new_delivery_price(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get New Delivery Price
@@ -700,7 +699,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: category, baseCoin
   Optional: settleCoin
   """
-  def get_new_delivery_price_v5(client, category, baseCoin, opts \\ []) do
+  def get_new_delivery_price(client, category, baseCoin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -728,7 +727,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_order_price_limit_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_order_price_limit(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Order Price Limit
@@ -738,7 +737,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol
   Optional: category
   """
-  def get_order_price_limit_v5(client, symbol, opts \\ []) do
+  def get_order_price_limit(client, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -762,7 +761,7 @@ defmodule Bybit.API.OpenApiV5.Market do
     end
   end
 
-  @spec get_rpi_orderbook_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_rpi_orderbook(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get RPI Orderbook
@@ -772,7 +771,7 @@ defmodule Bybit.API.OpenApiV5.Market do
   Required: symbol, limit
   Optional: category
   """
-  def get_rpi_orderbook_v5(client, symbol, limit, opts \\ []) do
+  def get_rpi_orderbook(client, symbol, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

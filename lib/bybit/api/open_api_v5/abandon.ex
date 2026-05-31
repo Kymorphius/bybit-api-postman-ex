@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec get_margin_coin_info_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_margin_coin_info(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Margin Coin Info
   Method: GET
@@ -18,7 +18,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
   Requires signature: true
   Optional: productId
   """
-  def get_margin_coin_info_v5(client, opts \\ []) do
+  def get_margin_coin_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -42,7 +42,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec get_lending_account_info_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_lending_account_info(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Lending Account Info
   Method: GET
@@ -50,7 +50,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
   Requires signature: true
   Required: coin
   """
-  def get_lending_account_info_v5(client, coin) do
+  def get_lending_account_info(client, coin) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -74,7 +74,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec get_order_records_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_order_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Order Records
   Method: GET
@@ -82,7 +82,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
   Requires signature: true
   Optional: coin, orderId, startTime, endTime, limit, orderType
   """
-  def get_order_records_v5(client, opts \\ []) do
+  def get_order_records(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -113,8 +113,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec get_lending_coin_info_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec get_lending_coin_info(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Lending Coin Info
   Method: GET
@@ -122,7 +121,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
   Requires signature: true
   Optional: coin
   """
-  def get_lending_coin_info_v5(client, opts \\ []) do
+  def get_lending_coin_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -146,14 +145,14 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec deposit_funds_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec deposit_funds(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Deposit Funds
   Method: POST
   Path: /v5/lending/purchase
   Requires signature: true
   """
-  def deposit_funds_v5(client, opts \\ []) do
+  def deposit_funds(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -185,14 +184,14 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec redeem_funds_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec redeem_funds(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Redeem Funds
   Method: POST
   Path: /v5/lending/redeem
   Requires signature: true
   """
-  def redeem_funds_v5(client, opts \\ []) do
+  def redeem_funds(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -224,14 +223,14 @@ defmodule Bybit.API.OpenApiV5.Abandon do
     end
   end
 
-  @spec cancel_redeem_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_redeem(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel Redeem
   Method: POST
   Path: /v5/lending/redeem-cancel
   Requires signature: true
   """
-  def cancel_redeem_v5(client, opts \\ []) do
+  def cancel_redeem(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

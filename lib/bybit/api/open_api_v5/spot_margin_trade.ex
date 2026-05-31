@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_vip_margin_data_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_vip_margin_data(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get VIP Margin Data
@@ -20,7 +20,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Required: currency
   Optional: vipLevel
   """
-  def get_vip_margin_data_v5(client, currency, opts \\ []) do
+  def get_vip_margin_data(client, currency, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -38,7 +38,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_historical_interest_rate_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_historical_interest_rate(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Historical Interest Rate
@@ -48,7 +48,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Required: currency, startTime, endTime
   Optional: vipLevel
   """
-  def get_historical_interest_rate_v5(client, currency, startTime, endTime, opts \\ []) do
+  def get_historical_interest_rate(client, currency, startTime, endTime, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -78,14 +78,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_status_and_leverage_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_status_and_leverage(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Status And Leverage
   Method: GET
   Path: /v5/spot-margin-trade/state
   Requires signature: true
   """
-  def get_status_and_leverage_v5(client) do
+  def get_status_and_leverage(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -110,14 +110,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec toggle_margin_trade_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec toggle_margin_trade(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Toggle Margin Trade
   Method: POST
   Path: /v5/spot-margin-trade/switch-mode
   Requires signature: true
   """
-  def toggle_margin_trade_v5(client, opts \\ []) do
+  def toggle_margin_trade(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -145,14 +145,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec set_leverage_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_leverage(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Leverage
   Method: POST
   Path: /v5/spot-margin-trade/set-leverage
   Requires signature: true
   """
-  def set_leverage_v5(client, opts \\ []) do
+  def set_leverage(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -185,7 +185,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_coin_state_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_coin_state(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Coin State
   Method: GET
@@ -193,7 +193,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: currency
   """
-  def get_coin_state_v5(client, opts \\ []) do
+  def get_coin_state(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -217,7 +217,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_tiered_collateral_ratio_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_tiered_collateral_ratio(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Tiered Collateral Ratio
@@ -226,7 +226,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: currency
   """
-  def get_tiered_collateral_ratio_v5(client, opts \\ []) do
+  def get_tiered_collateral_ratio(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -250,7 +250,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_currency_data_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_currency_data(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Currency Data
   Method: GET
@@ -258,7 +258,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: currency
   """
-  def get_currency_data_v5(client, opts \\ []) do
+  def get_currency_data(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -282,14 +282,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec fixed_rate_borrow_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec fixed_rate_borrow(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Fixed-Rate Borrow
   Method: POST
   Path: /v5/spot-margin-trade/fixedborrow
   Requires signature: true
   """
-  def fixed_rate_borrow_v5(client, opts \\ []) do
+  def fixed_rate_borrow(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -321,7 +321,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_fixed_rate_borrow_contract_info_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_fixed_rate_borrow_contract_info(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Fixed-Rate Borrow Contract Info
@@ -330,7 +330,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: orderId, orderCurrency, term, limit, cursor
   """
-  def get_fixed_rate_borrow_contract_info_v5(client, opts \\ []) do
+  def get_fixed_rate_borrow_contract_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -360,7 +360,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_fixed_rate_borrow_order_info_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_fixed_rate_borrow_order_info(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Fixed-Rate Borrow Order Info
@@ -369,7 +369,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: orderId, orderCurrency, state, term, limit, cursor
   """
-  def get_fixed_rate_borrow_order_info_v5(client, opts \\ []) do
+  def get_fixed_rate_borrow_order_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -400,7 +400,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_fixed_rate_borrow_order_quote_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_fixed_rate_borrow_order_quote(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Fixed-Rate Borrow Order Quote
@@ -410,7 +410,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Required: orderCurrency
   Optional: term, orderBy, sort, limit
   """
-  def get_fixed_rate_borrow_order_quote_v5(client, orderCurrency, opts \\ []) do
+  def get_fixed_rate_borrow_order_quote(client, orderCurrency, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -440,15 +440,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec renew_fixed_rate_borrow_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec renew_fixed_rate_borrow(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Renew Fixed-Rate Borrow
   Method: POST
   Path: /v5/spot-margin-trade/fixedborrow-renew
   Requires signature: true
   """
-  def renew_fixed_rate_borrow_v5(client, opts \\ []) do
+  def renew_fixed_rate_borrow(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -475,7 +474,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_auto_repay_mode_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_auto_repay_mode(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Auto Repay Mode
   Method: GET
@@ -483,7 +482,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: currency
   """
-  def get_auto_repay_mode_v5(client, opts \\ []) do
+  def get_auto_repay_mode(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -507,7 +506,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_liability_info_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_liability_info(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Liability Info
   Method: GET
@@ -515,7 +514,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Required: currency
   """
-  def get_liability_info_v5(client, currency) do
+  def get_liability_info(client, currency) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -539,7 +538,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_max_borrowable_amount_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_max_borrowable_amount(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Max Borrowable Amount
   Method: GET
@@ -547,7 +546,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Required: currency
   """
-  def get_max_borrowable_amount_v5(client, currency) do
+  def get_max_borrowable_amount(client, currency) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -571,7 +570,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_position_tiers_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_position_tiers(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Position Tiers
   Method: GET
@@ -579,7 +578,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Optional: currency
   """
-  def get_position_tiers_v5(client, opts \\ []) do
+  def get_position_tiers(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -603,7 +602,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec get_available_amount_to_repay_v5(Bybit.Client.t(), term()) ::
+  @spec get_available_amount_to_repay(Bybit.Client.t(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Available Amount to Repay
@@ -612,7 +611,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
   Requires signature: true
   Required: currency
   """
-  def get_available_amount_to_repay_v5(client, currency) do
+  def get_available_amount_to_repay(client, currency) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -636,14 +635,14 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
     end
   end
 
-  @spec set_auto_repay_mode_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_auto_repay_mode(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Auto Repay Mode
   Method: POST
   Path: /v5/spot-margin-trade/set-auto-repay-mode
   Requires signature: true
   """
-  def set_auto_repay_mode_v5(client, opts \\ []) do
+  def set_auto_repay_mode(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

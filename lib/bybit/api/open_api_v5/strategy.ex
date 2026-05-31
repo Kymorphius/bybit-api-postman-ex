@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Strategy do
     end
   end
 
-  @spec create_strategy_order_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_strategy_order(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Strategy Order
   Method: POST
   Path: /v5/strategy/create
   Requires signature: true
   """
-  def create_strategy_order_v5(client) do
+  def create_strategy_order(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -41,7 +41,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
     end
   end
 
-  @spec get_strategy_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_strategy_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Strategy List
   Method: GET
@@ -49,7 +49,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
   Requires signature: true
   Optional: strategyId, symbol, status, category, strategyType, beginTimeE0, endTimeE0, pageSize, cursor
   """
-  def get_strategy_list_v5(client, opts \\ []) do
+  def get_strategy_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -83,7 +83,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
     end
   end
 
-  @spec get_strategy_order_list_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_strategy_order_list(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Strategy Order List
@@ -93,7 +93,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
   Required: strategyId
   Optional: status, symbol, strategyType, beginTimeE0, endTimeE0, pageSize, cursor
   """
-  def get_strategy_order_list_v5(client, strategyId, opts \\ []) do
+  def get_strategy_order_list(client, strategyId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -126,14 +126,14 @@ defmodule Bybit.API.OpenApiV5.Strategy do
     end
   end
 
-  @spec stop_strategy_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec stop_strategy(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Stop Strategy
   Method: POST
   Path: /v5/strategy/stop
   Requires signature: true
   """
-  def stop_strategy_v5(client, opts \\ []) do
+  def stop_strategy(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

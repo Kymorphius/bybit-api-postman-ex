@@ -63,11 +63,11 @@ Example raw calls:
 ```elixir
 client = Bybit.Client.new("api_key", "api_secret", :testnet)
 
-Bybit.API.OpenApiV5.Market.get_bybit_server_time_v5(client)
-Bybit.API.OpenApiV5.Market.get_tickers_v5(client, "linear", "BTC")
-Bybit.API.OpenApiV5.Market.get_orderbook_v5(client, "linear", "BTCUSDT", "25")
+Bybit.API.OpenApiV5.Market.get_bybit_server_time(client)
+Bybit.API.OpenApiV5.Market.get_tickers(client, "linear", "BTC")
+Bybit.API.OpenApiV5.Market.get_orderbook(client, "linear", "BTCUSDT", "25")
 
-Bybit.API.OpenApiV5.Account.get_wallet_balance_v5(client, "UNIFIED")
+Bybit.API.OpenApiV5.Account.get_wallet_balance(client, "UNIFIED")
 
 Bybit.API.OpenApiV5.Order.place_order_linear_market_order_create(client,
   body: %{

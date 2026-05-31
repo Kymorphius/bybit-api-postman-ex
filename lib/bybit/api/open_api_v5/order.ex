@@ -228,14 +228,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec batch_place_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec batch_place_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Batch Place Order
   Method: POST
   Path: /v5/order/create-batch
   Requires signature: true
   """
-  def batch_place_order_v5(client, opts \\ []) do
+  def batch_place_order(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -268,14 +268,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec batch_amend_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec batch_amend_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Batch Amend Order
   Method: POST
   Path: /v5/order/amend-batch
   Requires signature: true
   """
-  def batch_amend_order_v5(client, opts \\ []) do
+  def batch_amend_order(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -308,14 +308,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec batch_cancel_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec batch_cancel_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Batch Cancel Order
   Method: POST
   Path: /v5/order/cancel-batch
   Requires signature: true
   """
-  def batch_cancel_order_v5(client, opts \\ []) do
+  def batch_cancel_order(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -348,14 +348,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec amend_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec amend_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Amend Order
   Method: POST
   Path: /v5/order/amend
   Requires signature: true
   """
-  def amend_order_v5(client, opts \\ []) do
+  def amend_order(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -388,14 +388,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec cancel_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel Order
   Method: POST
   Path: /v5/order/cancel
   Requires signature: true
   """
-  def cancel_order_v5(client, opts \\ []) do
+  def cancel_order(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -514,7 +514,7 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec get_open_closed_orders_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_open_closed_orders(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Open & Closed Orders
@@ -524,7 +524,7 @@ defmodule Bybit.API.OpenApiV5.Order do
   Required: category, orderId
   Optional: symbol, baseCoin, settleCoin, orderLinkId, openOnly, orderFilter, limit, cursor
   """
-  def get_open_closed_orders_v5(client, category, orderId, opts \\ []) do
+  def get_open_closed_orders(client, category, orderId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -561,7 +561,7 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec get_order_history_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_order_history(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Order History
@@ -571,7 +571,7 @@ defmodule Bybit.API.OpenApiV5.Order do
   Required: category, orderId
   Optional: symbol, baseCoin, settleCoin, orderLinkId, orderFilter, orderStatus, startTime, endTime, limit, cursor
   """
-  def get_order_history_v5(client, category, orderId, opts \\ []) do
+  def get_order_history(client, category, orderId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -609,7 +609,7 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec get_borrow_quota_v5(Bybit.Client.t(), term(), term(), term()) ::
+  @spec get_borrow_quota(Bybit.Client.t(), term(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Borrow Quota
@@ -620,7 +620,7 @@ defmodule Bybit.API.OpenApiV5.Order do
   Requires signature: true
   Required: category, symbol, side
   """
-  def get_borrow_quota_v5(client, category, symbol, side) do
+  def get_borrow_quota(client, category, symbol, side) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -645,7 +645,7 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec get_trade_history_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_trade_history(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Trade History
@@ -655,7 +655,7 @@ defmodule Bybit.API.OpenApiV5.Order do
   Required: category, symbol
   Optional: orderId, orderLinkId, baseCoin, settleCoin, startTime, endTime, execType, limit, cursor
   """
-  def get_trade_history_v5(client, category, symbol, opts \\ []) do
+  def get_trade_history(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -692,14 +692,14 @@ defmodule Bybit.API.OpenApiV5.Order do
     end
   end
 
-  @spec pre_check_order_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec pre_check_order(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Pre Check Order
   Method: POST
   Path: /v5/order/pre-check
   Requires signature: true
   """
-  def pre_check_order_v5(client) do
+  def pre_check_order(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

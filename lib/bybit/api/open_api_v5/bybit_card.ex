@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_mall_item_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec query_mall_item_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Mall Item List
   Method: POST
   Path: /v5/card/reward/mall/item/list
   Requires signature: true
   """
-  def query_mall_item_list_v5(client, opts \\ []) do
+  def query_mall_item_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -49,15 +49,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_cashback_detail_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec query_cashback_detail(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Cashback Detail
   Method: POST
   Path: /v5/card/reward/point/cashback/detail
   Requires signature: true
   """
-  def query_cashback_detail_v5(client, opts \\ []) do
+  def query_cashback_detail(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -84,14 +83,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_point_balance_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec query_point_balance(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Point Balance
   Method: POST
   Path: /v5/card/reward/points/balance
   Requires signature: true
   """
-  def query_point_balance_v5(client) do
+  def query_point_balance(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -115,14 +114,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_point_records_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec query_point_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Point Records
   Method: POST
   Path: /v5/card/reward/points/records
   Requires signature: true
   """
-  def query_point_records_v5(client, opts \\ []) do
+  def query_point_records(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -154,14 +153,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_tier_info_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec query_tier_info(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Tier Info
   Method: POST
   Path: /v5/card/reward/points/tier
   Requires signature: true
   """
-  def query_tier_info_v5(client) do
+  def query_tier_info(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -185,14 +184,14 @@ defmodule Bybit.API.OpenApiV5.BybitCard do
     end
   end
 
-  @spec query_asset_records_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec query_asset_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Query Asset Records
   Method: POST
   Path: /v5/card/transaction/query-asset-records
   Requires signature: true
   """
-  def query_asset_records_v5(client, opts \\ []) do
+  def query_asset_records(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

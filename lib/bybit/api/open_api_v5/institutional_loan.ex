@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.InstitutionalLoan do
     end
   end
 
-  @spec get_ltv_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_ltv(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get LTV
   Method: GET
   Path: /v5/ins-loan/ltv
   Requires signature: true
   """
-  def get_ltv_v5(client) do
+  def get_ltv(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -42,14 +42,14 @@ defmodule Bybit.API.OpenApiV5.InstitutionalLoan do
     end
   end
 
-  @spec bind_or_unbind_uid_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec bind_or_unbind_uid(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Bind Or Unbind UID
   Method: POST
   Path: /v5/ins-loan/association-uid
   Requires signature: true
   """
-  def bind_or_unbind_uid_v5(client, opts \\ []) do
+  def bind_or_unbind_uid(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

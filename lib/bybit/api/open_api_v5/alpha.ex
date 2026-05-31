@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_asset_detail_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_asset_detail(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Asset Detail
   Method: POST
   Path: /v5/alpha/trade/asset-detail
   Requires signature: true
   """
-  def get_asset_detail_v5(client, opts \\ []) do
+  def get_asset_detail(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -49,14 +49,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_asset_list_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_asset_list(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Asset List
   Method: POST
   Path: /v5/alpha/trade/asset-list
   Requires signature: true
   """
-  def get_asset_list_v5(client) do
+  def get_asset_list(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -80,14 +80,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_token_details_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_token_details(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Token Details
   Method: POST
   Path: /v5/alpha/trade/biz-token-details
   Requires signature: true
   """
-  def get_token_details_v5(client, opts \\ []) do
+  def get_token_details(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -119,14 +119,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_biz_token_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_biz_token_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Biz Token List
   Method: POST
   Path: /v5/alpha/trade/biz-token-list
   Requires signature: true
   """
-  def get_biz_token_list_v5(client, opts \\ []) do
+  def get_biz_token_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -150,14 +150,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_token_price_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_token_price_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Token Price List
   Method: POST
   Path: /v5/alpha/trade/biz-token-price-list
   Requires signature: true
   """
-  def get_token_price_list_v5(client, opts \\ []) do
+  def get_token_price_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -189,14 +189,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_order_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_order_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Order List
   Method: POST
   Path: /v5/alpha/trade/order-list
   Requires signature: true
   """
-  def get_order_list_v5(client, opts \\ []) do
+  def get_order_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -228,15 +228,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_payment_token_list_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec get_payment_token_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Payment Token List
   Method: POST
   Path: /v5/alpha/trade/pay-token-list
   Requires signature: true
   """
-  def get_payment_token_list_v5(client, opts \\ []) do
+  def get_payment_token_list(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -268,14 +267,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec execute_purchase_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec execute_purchase(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Execute Purchase
   Method: POST
   Path: /v5/alpha/trade/purchase
   Requires signature: true
   """
-  def execute_purchase_v5(client, opts \\ []) do
+  def execute_purchase(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -307,14 +306,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec get_trade_quote_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_trade_quote(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Trade Quote
   Method: POST
   Path: /v5/alpha/trade/quote
   Requires signature: true
   """
-  def get_trade_quote_v5(client, opts \\ []) do
+  def get_trade_quote(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -346,14 +345,14 @@ defmodule Bybit.API.OpenApiV5.Alpha do
     end
   end
 
-  @spec execute_redeem_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec execute_redeem(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Execute Redeem
   Method: POST
   Path: /v5/alpha/trade/redeem
   Requires signature: true
   """
-  def execute_redeem_v5(client, opts \\ []) do
+  def execute_redeem(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

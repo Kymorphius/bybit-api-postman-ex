@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec get_margin_coin_info_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_margin_coin_info(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Margin Coin Info
   Method: GET
@@ -18,7 +18,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
   Requires signature: true
   Optional: productId
   """
-  def get_margin_coin_info_v5(client, opts \\ []) do
+  def get_margin_coin_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -42,7 +42,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec get_loan_orders_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_loan_orders(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Loan Orders
   Method: GET
@@ -50,7 +50,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
   Requires signature: true
   Optional: orderId, startTime, endTime, limit
   """
-  def get_loan_orders_v5(client, opts \\ []) do
+  def get_loan_orders(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -79,14 +79,14 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec get_ltv_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_ltv(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get LTV
   Method: GET
   Path: /v5/ins-loan/ltv-convert
   Requires signature: true
   """
-  def get_ltv_v5(client) do
+  def get_ltv(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -110,7 +110,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec get_product_info_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_product_info(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Product Info
   Method: GET
@@ -118,7 +118,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
   Requires signature: true
   Optional: productId
   """
-  def get_product_info_v5(client, opts \\ []) do
+  def get_product_info(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -142,7 +142,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec get_repayment_orders_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_repayment_orders(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Repayment Orders
   Method: GET
@@ -150,7 +150,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
   Requires signature: true
   Optional: startTime, endTime, limit
   """
-  def get_repayment_orders_v5(client, opts \\ []) do
+  def get_repayment_orders(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -178,14 +178,14 @@ defmodule Bybit.API.OpenApiV5.Otc do
     end
   end
 
-  @spec repay_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec repay(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Repay
   Method: POST
   Path: /v5/ins-loan/repay-loan
   Requires signature: true
   """
-  def repay_v5(client, opts \\ []) do
+  def repay(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

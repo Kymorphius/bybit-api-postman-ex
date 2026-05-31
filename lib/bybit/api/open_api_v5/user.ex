@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec create_sub_uid_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_sub_uid(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Sub UID
   Method: POST
   Path: /v5/user/create-sub-member
   Requires signature: true
   """
-  def create_sub_uid_v5(client, opts \\ []) do
+  def create_sub_uid(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -49,15 +49,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec create_sub_uid_api_key_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec create_sub_uid_api_key(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Sub UID API Key
   Method: POST
   Path: /v5/user/create-sub-api
   Requires signature: true
   """
-  def create_sub_uid_api_key_v5(client, opts \\ []) do
+  def create_sub_uid_api_key(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -163,14 +162,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_api_key_information_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_api_key_information(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get API Key Information
   Method: GET
   Path: /v5/user/query-api
   Requires signature: true
   """
-  def get_api_key_information_v5(client) do
+  def get_api_key_information(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -195,7 +194,7 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_sub_account_all_api_keys_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_sub_account_all_api_keys(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Sub Account All API Keys
@@ -205,7 +204,7 @@ defmodule Bybit.API.OpenApiV5.User do
   Required: subMemberId
   Optional: limit, cursor
   """
-  def get_sub_account_all_api_keys_v5(client, subMemberId, opts \\ []) do
+  def get_sub_account_all_api_keys(client, subMemberId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -234,7 +233,7 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_uid_wallet_type_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_uid_wallet_type(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get UID Wallet Type
   Method: GET
@@ -242,7 +241,7 @@ defmodule Bybit.API.OpenApiV5.User do
   Requires signature: true
   Optional: memberIds
   """
-  def get_uid_wallet_type_v5(client, opts \\ []) do
+  def get_uid_wallet_type(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -267,7 +266,7 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_affiliate_user_info_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_affiliate_user_info(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Affiliate User Info
@@ -277,7 +276,7 @@ defmodule Bybit.API.OpenApiV5.User do
   Required: uid
   Optional: coin, business
   """
-  def get_affiliate_user_info_v5(client, uid, opts \\ []) do
+  def get_affiliate_user_info(client, uid, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -306,14 +305,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec freeze_sub_uid_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec freeze_sub_uid(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Freeze Sub UID
   Method: POST
   Path: /v5/user/frozen-sub-member
   Requires signature: true
   """
-  def freeze_sub_uid_v5(client, opts \\ []) do
+  def freeze_sub_uid(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -341,14 +340,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec delete_sub_uid_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec delete_sub_uid(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Delete Sub UID
   Method: POST
   Path: /v5/user/del-submember
   Requires signature: true
   """
-  def delete_sub_uid_v5(client, opts \\ []) do
+  def delete_sub_uid(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -376,15 +375,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec modify_master_api_key_v5(Bybit.Client.t(), Keyword.t()) ::
-          {:ok, term()} | {:error, term()}
+  @spec modify_master_api_key(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Modify Master API Key
   Method: POST
   Path: /v5/user/update-api
   Requires signature: true
   """
-  def modify_master_api_key_v5(client, opts \\ []) do
+  def modify_master_api_key(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -417,14 +415,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec delete_master_api_key_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec delete_master_api_key(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Delete Master API Key
   Method: POST
   Path: /v5/user/delete-api
   Requires signature: true
   """
-  def delete_master_api_key_v5(client) do
+  def delete_master_api_key(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -449,14 +447,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec modify_sub_api_key_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec modify_sub_api_key(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Modify Sub API Key
   Method: POST
   Path: /v5/user/update-sub-api
   Requires signature: true
   """
-  def modify_sub_api_key_v5(client, opts \\ []) do
+  def modify_sub_api_key(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -489,14 +487,14 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec delete_sub_api_key_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec delete_sub_api_key(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Delete Sub API Key
   Method: POST
   Path: /v5/user/delete-sub-api
   Requires signature: true
   """
-  def delete_sub_api_key_v5(client, opts \\ []) do
+  def delete_sub_api_key(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -521,7 +519,7 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_fund_custodial_sub_acct_v5(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_fund_custodial_sub_acct(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Fund Custodial Sub Acct
@@ -530,7 +528,7 @@ defmodule Bybit.API.OpenApiV5.User do
   Requires signature: true
   Optional: pageSize, nextCursor
   """
-  def get_fund_custodial_sub_acct_v5(client, opts \\ []) do
+  def get_fund_custodial_sub_acct(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -557,7 +555,7 @@ defmodule Bybit.API.OpenApiV5.User do
     end
   end
 
-  @spec get_friend_referrals_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_friend_referrals(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Friend Referrals
   Method: GET
@@ -565,7 +563,7 @@ defmodule Bybit.API.OpenApiV5.User do
   Requires signature: true
   Optional: status, size, cursor
   """
-  def get_friend_referrals_v5(client, opts \\ []) do
+  def get_friend_referrals(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
