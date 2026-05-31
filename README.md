@@ -92,6 +92,50 @@ BYBIT_ENV=testnet
 
 Supported environment values are `prod` / `prod_url` and `testnet` / `testnet_url`.
 
+## IEx Examples
+
+Start IEx from the project directory:
+
+```bash
+iex -S mix
+```
+
+The `.iex.exs` file aliases `BybitApiPostmanEx` and `Bybit.Example`, then prints the common commands.
+
+For manual testing, reduce log verbosity before calling signed endpoints so request signatures and API keys are not printed:
+
+```elixir
+Logger.configure(level: :info)
+```
+
+Public market examples:
+
+```elixir
+Bybit.Example.server_time()
+Bybit.Example.market_tickers("linear", "BTC")
+Bybit.Example.orderbook("linear", "BTCUSDT", "25")
+```
+
+Signed account example:
+
+```elixir
+Bybit.Example.wallet_balance("UNIFIED")
+```
+
+Testnet order example:
+
+```elixir
+Bybit.Example.place_order(%{
+  category: "linear",
+  symbol: "BTCUSDT",
+  side: "Buy",
+  orderType: "Market",
+  qty: "0.001"
+})
+```
+
+The order example sends a real request to the configured environment. Use `BYBIT_ENV=testnet` unless you explicitly intend to trade on production.
+
 ## Request Behavior
 
 The generated raw API functions call:
