@@ -27,13 +27,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/accept-other-quote",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"rfqId\": \"123456\"\n}")}
         })
 
@@ -58,13 +52,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/cancel-all-quotes",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -89,13 +77,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/cancel-all-rfq",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -120,13 +102,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/cancel-quote",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -159,13 +135,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/cancel-rfq",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -198,13 +168,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/config",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -229,13 +193,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/create-quote",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -268,13 +226,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/create-rfq",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -307,13 +259,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/execute-quote",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -352,13 +298,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -393,13 +333,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -433,13 +367,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             quoteLinkId: Keyword.get(opts, :quoteLinkId),
             traderType: Keyword.get(opts, :traderType)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -472,13 +400,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -511,13 +433,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             rfqLinkId: Keyword.get(opts, :rfqLinkId),
             traderType: Keyword.get(opts, :traderType)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -552,13 +468,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 

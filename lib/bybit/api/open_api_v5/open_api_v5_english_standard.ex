@@ -61,13 +61,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           base_url: base_url,
           url: "/v5/account/demo-apply-money",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -101,13 +95,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           base_url: base_url,
           url: "/v5/system/status",
           query: [id: Keyword.get(opts, :id), state: Keyword.get(opts, :state)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -132,13 +120,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           base_url: base_url,
           url: "/v5/user/agreement",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:

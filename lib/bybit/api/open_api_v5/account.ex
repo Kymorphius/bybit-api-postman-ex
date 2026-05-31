@@ -30,14 +30,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/wallet-balance",
           query: [accountType: accountType, coin: Keyword.get(opts, :coin)],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -63,14 +56,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/asset/coin-greeks",
           query: [baseCoin: baseCoin],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -96,14 +82,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/collateral-info",
           query: [currency: currency],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -128,14 +107,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/info",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -166,14 +138,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             symbol: Keyword.get(opts, :symbol),
             baseCoin: Keyword.get(opts, :baseCoin)
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -213,14 +178,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -262,14 +220,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -301,14 +252,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -333,14 +277,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/upgrade-to-uta",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -365,14 +302,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-margin-mode",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\n    \"setMarginMode\": \"REGULAR_MARGIN\"\n}")
@@ -400,14 +330,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/mmp-modify",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -440,14 +363,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/mmp-reset",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"baseCoin\": \"BTC\"\n}")}
         })
 
@@ -473,14 +389,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/order/disconnected-cancel-all",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -513,14 +422,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/query-dcp-info",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -545,14 +447,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/smp-group",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -578,14 +473,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/mmp-state",
           query: [baseCoin: baseCoin],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -610,13 +498,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/borrow",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\n    \"coin\": \"USDT\",\n    \"amount\": \"1\"\n}")
@@ -652,13 +534,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -684,13 +560,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/no-convert-repay",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -723,13 +593,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/option-asset-info",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -755,13 +619,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/pay-info",
           query: [coin: Keyword.get(opts, :coin)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -786,13 +644,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/quick-repayment",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"coin\": \"USDT\"\n}")}
         })
 
@@ -817,13 +669,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/repay",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -856,13 +702,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-collateral-switch",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -896,13 +736,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-collateral-switch-batch",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -936,13 +770,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-delta-mode",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"deltaEnable\": \"\"\n}")}
         })
 
@@ -967,13 +795,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-hedging-mode",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\n    \"setHedgingMode\": \"ON\"\n}")
@@ -1002,13 +824,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/set-limit-px-action",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -1048,13 +864,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             startTime: Keyword.get(opts, :startTime),
             endTime: Keyword.get(opts, :endTime)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -1079,13 +889,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/user-setting-config",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -1113,13 +917,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/withdrawal",
           query: [coinName: coinName],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 

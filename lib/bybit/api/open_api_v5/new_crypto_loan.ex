@@ -28,13 +28,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/adjust-ltv",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -74,13 +68,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -106,13 +94,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/collateral-data",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -138,13 +120,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/loanable-data",
           query: [vipLevel: Keyword.get(opts, :vipLevel), currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -171,13 +147,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/max-collateral-amount",
           query: [currency: currency],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -203,13 +173,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/max-loan",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -242,13 +206,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/position",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -273,13 +231,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/borrow",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -321,13 +273,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -352,13 +298,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/borrow-order-cancel",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"orderId\": \"123456\"\n}")}
         })
 
@@ -392,13 +332,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -432,13 +366,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -464,13 +392,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/fully-repay",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -503,13 +425,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/renew",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -548,13 +464,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -580,13 +490,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/repay-collateral",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -626,13 +530,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -657,13 +555,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/supply",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -705,13 +597,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -736,13 +622,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-fixed/supply-order-cancel",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"orderId\": \"123456\"\n}")}
         })
 
@@ -776,13 +656,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -816,13 +690,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -847,13 +715,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-flexible/borrow",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -893,13 +755,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -925,13 +781,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-flexible/ongoing-coin",
           query: [loanCurrency: Keyword.get(opts, :loanCurrency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -957,13 +807,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-flexible/repay",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -993,13 +837,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-flexible/repay-collateral",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -1041,13 +879,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 

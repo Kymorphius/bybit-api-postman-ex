@@ -63,14 +63,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             startTime: startTime,
             endTime: endTime
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -95,14 +88,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/state",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -127,14 +113,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/switch-mode",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\n    \"spotMarginMode\": \"1\"\n}")
@@ -162,14 +141,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/set-leverage",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -203,13 +175,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/coinstate",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -236,13 +202,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/collateral",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -268,13 +228,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/currency-data",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -299,13 +253,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/fixedborrow",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -346,13 +294,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -386,13 +328,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -426,13 +362,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -458,13 +388,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/fixedborrow-renew",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\n    \"loanId\": \"123456\",\n    \"qty\": \"1\"\n}")
@@ -493,13 +417,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/get-auto-repay-mode",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -525,13 +443,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/liability",
           query: [currency: currency],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -557,13 +469,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/max-borrowable",
           query: [currency: currency],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -589,13 +495,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/position-tiers",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -622,13 +522,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/repayment-available-amount",
           query: [currency: currency],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -653,13 +547,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/set-auto-repay-mode",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:

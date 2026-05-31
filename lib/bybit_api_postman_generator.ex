@@ -327,6 +327,7 @@ defmodule BybitApiPostmanGenerator do
   defp build_headers(headers) do
     headers
     |> Enum.reject(& &1.disabled)
+    |> Enum.reject(&bybit_auth_header?(&1.key))
     |> Enum.map(fn header ->
       value =
         inspect(header.value, limit: :infinity, printable_limit: :infinity, width: :infinity)
@@ -334,6 +335,13 @@ defmodule BybitApiPostmanGenerator do
       "{#{inspect(header.key, limit: :infinity, printable_limit: :infinity, width: :infinity)}, #{value}}"
     end)
     |> then(&"[#{Enum.join(&1, ", ")}]")
+  end
+
+  defp bybit_auth_header?(key) do
+    key
+    |> to_string()
+    |> String.upcase()
+    |> then(&(&1 in ["X-BAPI-SIGN", "X-BAPI-API-KEY", "X-BAPI-TIMESTAMP", "X-BAPI-RECV-WINDOW"]))
   end
 
   defp build_body_params(required_params, optional_params) do

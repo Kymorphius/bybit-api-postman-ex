@@ -27,14 +27,7 @@ defmodule Bybit.API.OpenApiV5.InstitutionalLoan do
           base_url: base_url,
           url: "/v5/ins-loan/ltv",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: nil
         })
 
@@ -59,14 +52,7 @@ defmodule Bybit.API.OpenApiV5.InstitutionalLoan do
           base_url: base_url,
           url: "/v5/ins-loan/association-uid",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:

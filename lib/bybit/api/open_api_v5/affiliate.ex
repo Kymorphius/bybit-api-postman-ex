@@ -37,13 +37,7 @@ defmodule Bybit.API.OpenApiV5.Affiliate do
             startDate: Keyword.get(opts, :startDate),
             endDate: Keyword.get(opts, :endDate)
           ],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: nil
         })
 

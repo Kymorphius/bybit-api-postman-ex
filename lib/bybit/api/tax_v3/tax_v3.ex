@@ -28,14 +28,7 @@ defmodule Bybit.API.TaxV3 do
           base_url: base_url,
           url: "/fht/compliance/tax/v3/private/registertime",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{mode: "raw", raw: Keyword.get(opts, :body, "")}
         })
 
@@ -61,14 +54,7 @@ defmodule Bybit.API.TaxV3 do
           base_url: base_url,
           url: "/fht/compliance/tax/v3/private/create",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw:
@@ -102,14 +88,7 @@ defmodule Bybit.API.TaxV3 do
           base_url: base_url,
           url: "/fht/compliance/tax/v3/private/status",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\r\n    \"queryId\": \"12312312415325325\"\r\n}")
@@ -137,14 +116,7 @@ defmodule Bybit.API.TaxV3 do
           base_url: base_url,
           url: "/fht/compliance/tax/v3/private/url",
           query: [],
-          headers: [
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"X-BAPI-API-KEY", "{{bybit-api-key}}"},
-            {"X-BAPI-TIMESTAMP", "{{timestamp}}"},
-            {"X-BAPI-RECV-WINDOW", "{{recvWindow}}"},
-            {"X-BAPI-SIGN", "{{signature}}"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
             raw: Keyword.get(opts, :body, "{\r\n    \"queryId\": \"12312312415325325\"\r\n}")
