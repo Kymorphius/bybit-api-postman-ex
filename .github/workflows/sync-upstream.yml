@@ -1,0 +1,126 @@
+name: Sync Bybit API Postman
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '15 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: ci/bybit-quickstart-postman
+
+      - name: Set up Erlang/OTP
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: '28.0'
+          elixir-version: '1.19.5'
+
+      - name: Cache deps and build artifacts
+        uses: actions/cache@v5
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Configure Git identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch main branch
+        run: git fetch origin main:refs/remotes/origin/main
+
+      - name: Merge main into CI branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge --no-edit origin/main
+
+      - name: Push merged main to CI branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push origin HEAD:ci/bybit-quickstart-postman
+
+      - name: Pull Bybit Postman repo
+        run: mix pull_repo
+
+      - name: Capture upstream commit metadata
+        id: upstream_commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          UPSTREAM_REPO="lib/bybit_api_postman_repo"
+          COMMIT_SHA="$(git -C "$UPSTREAM_REPO" rev-parse HEAD)"
+          COMMIT_SUBJECT="$(git -C "$UPSTREAM_REPO" log -1 --format=%s)"
+          COMMIT_BODY="$(git -C "$UPSTREAM_REPO" log -1 --format=%b)"
+          {
+            printf 'sha=%s\n' "$COMMIT_SHA"
+            printf 'subject=%s\n' "$COMMIT_SUBJECT"
+            printf 'body<<EOF\n%s\nEOF\n' "$COMMIT_BODY"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate raw API modules
+        run: mix generate_raw_api --all
+
+      - name: Check for generated changes
+        id: generated_diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- .; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected after syncing main and upstream."
+            echo "Upstream commit: ${{ steps.upstream_commit.outputs.sha }}"
+            echo "Upstream subject: ${{ steps.upstream_commit.outputs.subject }}"
+            echo "Generated diff stat:"
+            git diff --stat || true
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected after syncing main and upstream."
+          fi
+
+      - name: Create pull request
+        if: steps.generated_diff.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Sync upstream commit ${{ steps.upstream_commit.outputs.sha }}: ${{ steps.upstream_commit.outputs.subject }}"
+          title: "CI sync: upstream Bybit QuickStartWithPostman ${{ steps.upstream_commit.outputs.sha }}"
+          body: |
+            This PR keeps the continuous integration branch aligned with the latest upstream Bybit QuickStartWithPostman repository contents.
+
+            Upstream commit: ${{ steps.upstream_commit.outputs.sha }}
+            Subject: ${{ steps.upstream_commit.outputs.subject }}
+
+            Upstream body:
+            ${{ steps.upstream_commit.outputs.body }}
+          branch: ci/bybit-quickstart-postman
+          delete-branch: false
+          draft: true
+          base: main
+          labels: |
+            automated
+            upstream-sync
+            continuous-integration
