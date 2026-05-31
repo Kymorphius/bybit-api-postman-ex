@@ -39,19 +39,19 @@ defmodule Bybit.Example do
   end
 
   def server_time do
-    Market.get_bybit_server_time(sample_client())
+    Market.get_bybit_server_time_v5(sample_client())
   end
 
   def market_tickers(category \\ "linear", base_coin \\ "BTC") do
-    Market.get_tickers(sample_client(), category, base_coin)
+    Market.get_tickers_v5(sample_client(), category, base_coin)
   end
 
   def orderbook(category \\ "linear", symbol \\ "BTCUSDT", limit \\ "25") do
-    Market.get_orderbook(sample_client(), category, symbol, limit)
+    Market.get_orderbook_v5(sample_client(), category, symbol, limit)
   end
 
   def wallet_balance(account_type \\ "UNIFIED", opts \\ []) do
-    Account.get_wallet_balance(sample_client(), account_type, opts)
+    Account.get_wallet_balance_v5(sample_client(), account_type, opts)
   end
 
   def place_order(body) when is_map(body) or is_binary(body) do
@@ -59,7 +59,7 @@ defmodule Bybit.Example do
   end
 
   def tax_register_date(body \\ "") do
-    TaxV3.get_user_register_date(sample_client(), body: body)
+    TaxV3.get_user_register_date_v3(sample_client(), body: body)
   end
 
   defp load_dotenv(path \\ ".env") do

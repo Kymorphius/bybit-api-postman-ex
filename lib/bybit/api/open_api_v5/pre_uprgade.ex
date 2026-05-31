@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_order_history(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_pre_upgrade_order_history_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Pre-upgrade Order History
@@ -20,7 +20,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category
   Optional: symbol, baseCoin, orderId, orderLinkId, orderFilter, orderStatus, startTime, endTime, limit, cursor
   """
-  def get_pre_upgrade_order_history(client, category, opts \\ []) do
+  def get_pre_upgrade_order_history_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -57,7 +57,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_trade_history(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_pre_upgrade_trade_history_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Pre-upgrade Trade History
@@ -67,7 +67,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category, symbol, limit
   Optional: orderId, orderLinkId, baseCoin, startTime, endTime, execType, cursor
   """
-  def get_pre_upgrade_trade_history(client, category, symbol, limit, opts \\ []) do
+  def get_pre_upgrade_trade_history_v5(client, category, symbol, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -103,7 +103,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_transaction_log(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_pre_upgrade_transaction_log_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Pre-upgrade Transaction Log
@@ -113,7 +113,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category
   Optional: baseCoin, type, startTime, endTime, limit, cursor
   """
-  def get_pre_upgrade_transaction_log(client, category, opts \\ []) do
+  def get_pre_upgrade_transaction_log_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -146,7 +146,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_closed_pnl(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_pre_upgrade_closed_pnl_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Pre-upgrade Closed PnL
@@ -156,7 +156,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category, symbol
   Optional: startTime, endTime, limit, cursor
   """
-  def get_pre_upgrade_closed_pnl(client, category, symbol, opts \\ []) do
+  def get_pre_upgrade_closed_pnl_v5(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -188,7 +188,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_delivery_record(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_pre_upgrade_delivery_record_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Pre-upgrade Delivery Record
@@ -198,7 +198,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category
   Optional: symbol, expDate, limit, cursor
   """
-  def get_pre_upgrade_delivery_record(client, category, opts \\ []) do
+  def get_pre_upgrade_delivery_record_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -229,7 +229,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
     end
   end
 
-  @spec get_pre_upgrade_usdc_session_settlement(
+  @spec get_pre_upgrade_usdc_session_settlement_v5(
           Bybit.Client.t(),
           term(),
           term(),
@@ -244,7 +244,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
   Required: category, symbol, limit
   Optional: cursor
   """
-  def get_pre_upgrade_usdc_session_settlement(client, category, symbol, limit, opts \\ []) do
+  def get_pre_upgrade_usdc_session_settlement_v5(client, category, symbol, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

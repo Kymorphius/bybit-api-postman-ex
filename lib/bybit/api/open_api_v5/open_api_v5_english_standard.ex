@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec get_announcement(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
+  @spec get_announcement_v5(Bybit.Client.t(), term(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Announcement
@@ -20,7 +20,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
   Required: locale, page, limit
   Optional: type, tag
   """
-  def get_announcement(client, locale, page, limit, opts \\ []) do
+  def get_announcement_v5(client, locale, page, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -44,14 +44,14 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec demo_trading_service(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec demo_trading_service_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Demo Trading Service
   Method: POST
   Path: /v5/account/demo-apply-money
   Requires signature: true
   """
-  def demo_trading_service(client, opts \\ []) do
+  def demo_trading_service_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -83,7 +83,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec get_system_status(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_system_status_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get System Status
   Method: GET
@@ -91,7 +91,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
   Requires signature: true
   Optional: id, state
   """
-  def get_system_status(client, opts \\ []) do
+  def get_system_status_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -115,14 +115,14 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec sign_agreement(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec sign_agreement_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Sign Agreement
   Method: POST
   Path: /v5/user/agreement
   Requires signature: true
   """
-  def sign_agreement(client, opts \\ []) do
+  def sign_agreement_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

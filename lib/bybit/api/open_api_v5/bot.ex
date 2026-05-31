@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec close_dca_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec close_dca_bot_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Close DCA Bot
   Method: POST
   Path: /v5/dca/close-bot
   Requires signature: true
   """
-  def close_dca_bot(client, opts \\ []) do
+  def close_dca_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -49,14 +49,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec create_dca_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_dca_bot_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create DCA Bot
   Method: POST
   Path: /v5/dca/create-bot
   Requires signature: true
   """
-  def create_dca_bot(client, opts \\ []) do
+  def create_dca_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -88,14 +88,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec close_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec close_bot_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Close Bot
   Method: POST
   Path: /v5/fcombobot/close
   Requires signature: true
   """
-  def close_bot(client, opts \\ []) do
+  def close_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -119,14 +119,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec create_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_bot_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Bot
   Method: POST
   Path: /v5/fcombobot/create
   Requires signature: true
   """
-  def create_bot(client, opts \\ []) do
+  def create_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -158,14 +158,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec get_bot_detail(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_bot_detail_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Bot Detail
   Method: POST
   Path: /v5/fcombobot/detail
   Requires signature: true
   """
-  def get_bot_detail(client, opts \\ []) do
+  def get_bot_detail_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -373,14 +373,14 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec close_martingale_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec close_martingale_bot_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Close Martingale Bot
   Method: POST
   Path: /v5/fmartingalebot/close
   Requires signature: true
   """
-  def close_martingale_bot(client, opts \\ []) do
+  def close_martingale_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -404,14 +404,15 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec create_martingale_bot(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_martingale_bot_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Create Martingale Bot
   Method: POST
   Path: /v5/fmartingalebot/create
   Requires signature: true
   """
-  def create_martingale_bot(client, opts \\ []) do
+  def create_martingale_bot_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -443,7 +444,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
     end
   end
 
-  @spec get_martingale_bot_detail(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_martingale_bot_detail_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Martingale Bot Detail
@@ -451,7 +452,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
   Path: /v5/fmartingalebot/detail
   Requires signature: true
   """
-  def get_martingale_bot_detail(client, opts \\ []) do
+  def get_martingale_bot_detail_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

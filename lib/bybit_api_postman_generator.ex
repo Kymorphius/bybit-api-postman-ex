@@ -461,10 +461,11 @@ defmodule BybitApiPostmanGenerator do
     end)
   end
 
-  defp sanitize_function_name(name, _url, params) do
+  defp sanitize_function_name(name, url, params) do
     {base_name, tags} = split_function_name(name)
+    version_suffix = extract_version_suffix(url)
 
-    candidates = build_function_name_candidates(base_name, tags)
+    candidates = build_function_name_candidates(base_name, tags, version_suffix)
 
     choose_best_name(candidates, params)
     |> String.replace(~r/_+/u, "_")
@@ -500,8 +501,11 @@ defmodule BybitApiPostmanGenerator do
     |> maybe_prefix_numeric()
   end
 
-  defp build_function_name_candidates(base_name, tags) do
-    [base_name, join_parts([base_name | tags])]
+  defp build_function_name_candidates(base_name, tags, version_suffix) do
+    base_with_version = append_version_suffix(base_name, version_suffix)
+    tagged_with_version = append_version_suffix(join_parts([base_name | tags]), version_suffix)
+
+    [base_with_version, tagged_with_version]
     |> Enum.reject(&is_nil/1)
     |> Enum.reject(&(&1 == ""))
     |> Enum.uniq()

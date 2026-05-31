@@ -10,14 +10,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_issued_voucher(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_issued_voucher_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Issued Voucher
   Method: POST
   Path: /v5/broker/award/distribution-record
   Requires signature: true
   """
-  def get_issued_voucher(client, opts \\ []) do
+  def get_issued_voucher_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -50,14 +50,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_voucher_spec(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_voucher_spec_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Voucher Spec
   Method: POST
   Path: /v5/broker/award/info
   Requires signature: true
   """
-  def get_voucher_spec(client, opts \\ []) do
+  def get_voucher_spec_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -82,14 +82,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec issue_voucher(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec issue_voucher_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Issue Voucher
   Method: POST
   Path: /v5/broker/award/distribute-award
   Requires signature: true
   """
-  def issue_voucher(client, opts \\ []) do
+  def issue_voucher_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -122,14 +122,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_account_info(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_account_info_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Account Info
   Method: GET
   Path: /v5/broker/account-info
   Requires signature: true
   """
-  def get_account_info(client) do
+  def get_account_info_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -154,7 +154,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_broker_earning(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_broker_earning_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Broker Earning
   Method: GET
@@ -162,7 +162,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
   Requires signature: true
   Optional: bizType, startTime, endTime, limit, cursor
   """
-  def get_broker_earning(client, opts \\ []) do
+  def get_broker_earning_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -193,7 +193,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_sub_account_deposit_records(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_sub_account_deposit_records_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Sub Account Deposit Records
@@ -202,7 +202,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
   Requires signature: true
   Optional: id, txID, subMemberId, coin, startTime, endTime, limit, cursor
   """
-  def get_sub_account_deposit_records(client, opts \\ []) do
+  def get_sub_account_deposit_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -236,7 +236,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_all_rate_limits(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_all_rate_limits_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get All Rate Limits
   Method: GET
@@ -244,7 +244,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
   Requires signature: true
   Optional: limit, cursor, uids
   """
-  def get_all_rate_limits(client, opts \\ []) do
+  def get_all_rate_limits_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -272,14 +272,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_rate_limit_cap(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_rate_limit_cap_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Rate Limit Cap
   Method: GET
   Path: /v5/broker/apilimit/query-cap
   Requires signature: true
   """
-  def get_rate_limit_cap(client) do
+  def get_rate_limit_cap_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -303,14 +303,14 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec set_rate_limit(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_rate_limit_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Rate Limit
   Method: POST
   Path: /v5/broker/apilimit/set
   Requires signature: true
   """
-  def set_rate_limit(client, opts \\ []) do
+  def set_rate_limit_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -342,7 +342,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
     end
   end
 
-  @spec get_earning(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_earning_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Earning
   Method: GET
@@ -350,7 +350,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
   Requires signature: true
   Optional: bizType, begin, end, uid, limit, cursor
   """
-  def get_earning(client, opts \\ []) do
+  def get_earning_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

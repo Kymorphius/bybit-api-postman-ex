@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_convert_coin_list(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_convert_coin_list_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Convert Coin List
@@ -20,7 +20,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: accountType, coin
   Optional: side
   """
-  def get_convert_coin_list(client, accountType, coin, opts \\ []) do
+  def get_convert_coin_list_v5(client, accountType, coin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -199,7 +199,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_single_coin_balance(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_single_coin_balance_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Single Coin Balance
@@ -209,7 +209,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: accountType, coin
   Optional: memberId, toMemberId, toAccountType, withBonus, withTransferSafeAmount, withLtvTransferSafeAmount
   """
-  def get_single_coin_balance(client, accountType, coin, opts \\ []) do
+  def get_single_coin_balance_v5(client, accountType, coin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -243,7 +243,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_all_coins_balance(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_all_coins_balance_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get All Coins Balance
@@ -253,7 +253,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: accountType
   Optional: memberId, coin, withBonus
   """
-  def get_all_coins_balance(client, accountType, opts \\ []) do
+  def get_all_coins_balance_v5(client, accountType, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -283,7 +283,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_withdrawable_amount(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_withdrawable_amount_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Withdrawable Amount
   Method: GET
@@ -291,7 +291,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Required: coin
   """
-  def get_withdrawable_amount(client, coin) do
+  def get_withdrawable_amount_v5(client, coin) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -316,7 +316,8 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_asset_info(Bybit.Client.t(), term(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_asset_info_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Asset Info
   Method: GET
@@ -325,7 +326,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: accountType
   Optional: coin
   """
-  def get_asset_info(client, accountType, opts \\ []) do
+  def get_asset_info_v5(client, accountType, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -350,7 +351,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec asset_overview(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec asset_overview_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Asset Overview
   Method: GET
@@ -358,7 +359,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: memberId, valuationCurrency, accountType
   """
-  def asset_overview(client, opts \\ []) do
+  def asset_overview_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -418,7 +419,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_internal_transfer_records(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_internal_transfer_records_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Internal Transfer Records
@@ -427,7 +428,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: transferId, coin, status, startTime, endTime, limit, cursor
   """
-  def get_internal_transfer_records(client, opts \\ []) do
+  def get_internal_transfer_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -460,7 +461,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_universal_transfer_records(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_universal_transfer_records_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Universal Transfer Records
@@ -469,7 +470,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: transferId, coin, status, startTime, endTime, limit, cursor
   """
-  def get_universal_transfer_records(client, opts \\ []) do
+  def get_universal_transfer_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -502,7 +503,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec enable_universal_transfer_for_sub_uid(Bybit.Client.t(), Keyword.t()) ::
+  @spec enable_universal_transfer_for_sub_uid_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Enable Universal Transfer for Sub UID
@@ -510,7 +511,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Path: /v5/asset/transfer/save-transfer-sub-member
   Requires signature: true
   """
-  def enable_universal_transfer_for_sub_uid(client, opts \\ []) do
+  def enable_universal_transfer_for_sub_uid_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -535,7 +536,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_transferable_coin(Bybit.Client.t(), term(), term()) ::
+  @spec get_transferable_coin_v5(Bybit.Client.t(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Transferable Coin
@@ -544,7 +545,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Required: fromAccountType, toAccountType
   """
-  def get_transferable_coin(client, fromAccountType, toAccountType) do
+  def get_transferable_coin_v5(client, fromAccountType, toAccountType) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -570,7 +571,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec create_internal_transfer(Bybit.Client.t(), Keyword.t()) ::
+  @spec create_internal_transfer_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Create Internal Transfer
@@ -578,7 +579,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Path: /v5/asset/transfer/inter-transfer
   Requires signature: true
   """
-  def create_internal_transfer(client, opts \\ []) do
+  def create_internal_transfer_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -611,7 +612,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec create_universal_transfer(Bybit.Client.t(), Keyword.t()) ::
+  @spec create_universal_transfer_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Create Universal Transfer
@@ -619,7 +620,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Path: /v5/asset/transfer/universal-transfer
   Requires signature: true
   """
-  def create_universal_transfer(client, opts \\ []) do
+  def create_universal_transfer_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -652,7 +653,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_master_deposit_address(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_master_deposit_address_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Master Deposit Address
@@ -662,7 +663,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: coin
   Optional: chainType
   """
-  def get_master_deposit_address(client, coin, opts \\ []) do
+  def get_master_deposit_address_v5(client, coin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -687,7 +688,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_deposit_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_deposit_records_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Deposit Records
   Variant: On Chain
@@ -697,7 +698,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: id, txID, coin, startTime, endTime, limit, cursor
   """
-  def get_deposit_records(client, opts \\ []) do
+  def get_deposit_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -730,7 +731,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_sub_deposit_address(Bybit.Client.t(), term(), term(), term()) ::
+  @spec get_sub_deposit_address_v5(Bybit.Client.t(), term(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Sub Deposit Address
@@ -739,7 +740,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: false
   Required: coin, chainType, subMemberId
   """
-  def get_sub_deposit_address(client, coin, chainType, subMemberId) do
+  def get_sub_deposit_address_v5(client, coin, chainType, subMemberId) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -757,7 +758,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_sub_deposit_records(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_sub_deposit_records_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Sub Deposit Records
@@ -769,7 +770,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: subMemberId
   Optional: id, txID, coin, startTime, endTime, limit, cursor
   """
-  def get_sub_deposit_records(client, subMemberId, opts \\ []) do
+  def get_sub_deposit_records_v5(client, subMemberId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -803,14 +804,14 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec set_deposit_account(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_deposit_account_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Deposit Account
   Method: POST
   Path: /v5/asset/deposit/deposit-to-account
   Requires signature: true
   """
-  def set_deposit_account(client, opts \\ []) do
+  def set_deposit_account_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -837,7 +838,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_internal_deposit_records(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_internal_deposit_records_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Internal Deposit Records
@@ -848,7 +849,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: txID, startTime, endTime, coin, cursor, limit
   """
-  def get_internal_deposit_records(client, opts \\ []) do
+  def get_internal_deposit_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -879,7 +880,8 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_withdrawal_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_withdrawal_records_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Withdrawal Records
   Method: GET
@@ -887,7 +889,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: withdrawID, txID, coin, withdrawType, startTime, endTime, limit, cursor
   """
-  def get_withdrawal_records(client, opts \\ []) do
+  def get_withdrawal_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -921,14 +923,14 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec withdraw(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec withdraw_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Withdraw
   Method: POST
   Path: /v5/asset/withdraw/create
   Requires signature: true
   """
-  def withdraw(client, opts \\ []) do
+  def withdraw_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -961,14 +963,14 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec cancel_withdrawal(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_withdrawal_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel Withdrawal
   Method: POST
   Path: /v5/asset/withdraw/cancel
   Requires signature: true
   """
-  def cancel_withdrawal(client, opts \\ []) do
+  def cancel_withdrawal_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -993,7 +995,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_withdrawal_address_list(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_withdrawal_address_list_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Withdrawal Address List
@@ -1002,7 +1004,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: coin, chain, addressType, limit, cursor
   """
-  def get_withdrawal_address_list(client, opts \\ []) do
+  def get_withdrawal_address_list_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1032,14 +1034,14 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_available_vasps(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_available_vasps_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get available VASPs
   Method: GET
   Path: /v5/asset/withdraw/vasp/list
   Requires signature: true
   """
-  def get_available_vasps(client) do
+  def get_available_vasps_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1063,7 +1065,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_usdc_session_settlement(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_usdc_session_settlement_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get USDC Session Settlement
@@ -1073,7 +1075,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: category, symbol
   Optional: startTime, endTime, limit, cursor
   """
-  def get_usdc_session_settlement(client, category, symbol, opts \\ []) do
+  def get_usdc_session_settlement_v5(client, category, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1105,7 +1107,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_coin_exchange_records(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_coin_exchange_records_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Coin Exchange Records
@@ -1115,7 +1117,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: limit
   Optional: fromCoin, toCoin, cursor
   """
-  def get_coin_exchange_records(client, limit, opts \\ []) do
+  def get_coin_exchange_records_v5(client, limit, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1145,7 +1147,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_coin_info(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_coin_info_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Coin Info
   Method: GET
@@ -1153,7 +1155,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Required: coin
   """
-  def get_coin_info(client, coin) do
+  def get_coin_info_v5(client, coin) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1210,7 +1212,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_delivery_record(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_delivery_record_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Delivery Record
@@ -1220,7 +1222,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: category
   Optional: symbol, startTime, endTime, expDate, limit, cursor
   """
-  def get_delivery_record(client, category, opts \\ []) do
+  def get_delivery_record_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1325,7 +1327,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_exchange_history(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_exchange_history_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Exchange History
   Method: GET
@@ -1333,7 +1335,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: accountType, quoteId, startTime, endTime, cursor, size
   """
-  def get_exchange_history(client, opts \\ []) do
+  def get_exchange_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1364,7 +1366,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_small_balance_coins(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_small_balance_coins_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Small Balance Coins
@@ -1374,7 +1376,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Required: accountType
   Optional: fromCoin
   """
-  def get_small_balance_coins(client, accountType, opts \\ []) do
+  def get_small_balance_coins_v5(client, accountType, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1398,7 +1400,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec funding_account_transaction_history(Bybit.Client.t(), Keyword.t()) ::
+  @spec funding_account_transaction_history_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Funding Account Transaction History
@@ -1407,7 +1409,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: createTimeFrom, createTimeTo, limit, cursor
   """
-  def funding_account_transaction_history(client, opts \\ []) do
+  def funding_account_transaction_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1436,7 +1438,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_portfolio_margin_info(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_portfolio_margin_info_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Portfolio Margin Info
@@ -1445,7 +1447,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: baseCoin
   """
-  def get_portfolio_margin_info(client, opts \\ []) do
+  def get_portfolio_margin_info_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1469,7 +1471,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_total_members_assets(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_total_members_assets_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Total Members Assets
@@ -1478,7 +1480,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: coin
   """
-  def get_total_members_assets(client, opts \\ []) do
+  def get_total_members_assets_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1502,7 +1504,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_balance(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_balance_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Balance
   Method: GET
@@ -1510,7 +1512,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: currency
   """
-  def get_balance(client, opts \\ []) do
+  def get_balance_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1534,7 +1536,8 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_trading_pair_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_trading_pair_list_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Trading Pair List
   Method: GET
@@ -1542,7 +1545,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Optional: side
   """
-  def get_trading_pair_list(client, opts \\ []) do
+  def get_trading_pair_list_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1644,7 +1647,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_reference_price(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_reference_price_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Reference Price
   Method: GET
@@ -1652,7 +1655,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
   Requires signature: true
   Required: symbol
   """
-  def get_reference_price(client, symbol) do
+  def get_reference_price_v5(client, symbol) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

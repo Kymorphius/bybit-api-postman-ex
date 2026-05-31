@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_unpaid_loans(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_unpaid_loans_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Unpaid Loans
   Method: GET
@@ -18,7 +18,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: orderId, loanCurrency, collateralCurrency, loanTermType, loanTerm, limit, cursor
   """
-  def get_unpaid_loans(client, opts \\ []) do
+  def get_unpaid_loans_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -51,7 +51,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_max_allowed_collateral_reduction_amount(Bybit.Client.t(), term()) ::
+  @spec get_max_allowed_collateral_reduction_amount_v5(Bybit.Client.t(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Max. Allowed Collateral Reduction Amount
@@ -60,7 +60,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Required: orderId
   """
-  def get_max_allowed_collateral_reduction_amount(client, orderId) do
+  def get_max_allowed_collateral_reduction_amount_v5(client, orderId) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -85,7 +85,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_completed_loan_history(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_completed_loan_history_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Completed Loan History
@@ -94,7 +94,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: orderId, loanCurrency, collateralCurrency, limit, cursor
   """
-  def get_completed_loan_history(client, opts \\ []) do
+  def get_completed_loan_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -125,7 +125,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_collateral_coins(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_collateral_coins_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Collateral Coins
   Method: GET
@@ -133,7 +133,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: vipLevel, currency
   """
-  def get_collateral_coins(client, opts \\ []) do
+  def get_collateral_coins_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -158,7 +158,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_loan_ltv_adjustment_history(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_loan_ltv_adjustment_history_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Loan LTV Adjustment History
@@ -167,7 +167,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: orderId, adjustId, collateralCurrency, limit, cursor
   """
-  def get_loan_ltv_adjustment_history(client, opts \\ []) do
+  def get_loan_ltv_adjustment_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -198,14 +198,14 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec borrow(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec borrow_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Borrow
   Method: POST
   Path: /v5/crypto-loan/borrow
   Requires signature: true
   """
-  def borrow(client, opts \\ []) do
+  def borrow_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -238,14 +238,14 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec repay(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec repay_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Repay
   Method: POST
   Path: /v5/crypto-loan/repay
   Requires signature: true
   """
-  def repay(client, opts \\ []) do
+  def repay_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -278,7 +278,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec adjust_collateral_amount(Bybit.Client.t(), Keyword.t()) ::
+  @spec adjust_collateral_amount_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Adjust Collateral Amount
@@ -286,7 +286,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Path: /v5/crypto-loan/adjust-ltv
   Requires signature: true
   """
-  def adjust_collateral_amount(client, opts \\ []) do
+  def adjust_collateral_amount_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -319,7 +319,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_account_borrowable_collateralizable_limit(Bybit.Client.t(), term(), term()) ::
+  @spec get_account_borrowable_collateralizable_limit_v5(Bybit.Client.t(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Account Borrowable/Collateralizable Limit
@@ -328,7 +328,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Required: loanCurrency, collateralCurrency
   """
-  def get_account_borrowable_collateralizable_limit(client, loanCurrency, collateralCurrency) do
+  def get_account_borrowable_collateralizable_limit_v5(client, loanCurrency, collateralCurrency) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -352,7 +352,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_borrowable_coins(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_borrowable_coins_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Borrowable Coins
   Method: GET
@@ -360,7 +360,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: vipLevel, currency
   """
-  def get_borrowable_coins(client, opts \\ []) do
+  def get_borrowable_coins_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -384,7 +384,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
     end
   end
 
-  @spec get_loan_repayment_history(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_loan_repayment_history_v5(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Loan Repayment History
@@ -393,7 +393,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
   Requires signature: true
   Optional: orderId, repayId, loanCurrency, limit, cursor
   """
-  def get_loan_repayment_history(client, opts \\ []) do
+  def get_loan_repayment_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

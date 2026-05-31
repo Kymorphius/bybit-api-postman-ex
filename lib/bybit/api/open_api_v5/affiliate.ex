@@ -10,7 +10,8 @@ defmodule Bybit.API.OpenApiV5.Affiliate do
     end
   end
 
-  @spec get_affiliate_user_list(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_affiliate_user_list_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Affiliate User List
   Method: GET
@@ -18,7 +19,7 @@ defmodule Bybit.API.OpenApiV5.Affiliate do
   Requires signature: true
   Optional: size, cursor, needDeposit, need30, need365, startDate, endDate
   """
-  def get_affiliate_user_list(client, opts \\ []) do
+  def get_affiliate_user_list_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_trade_history(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_trade_history_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Trade History
   Method: GET
@@ -18,7 +18,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Optional: symbol, orderId, orderLinkId, startTime, endTime, limit, cursor
   """
-  def get_trade_history(client, opts \\ []) do
+  def get_trade_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -50,7 +50,8 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_max_qty(Bybit.Client.t(), term(), term(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_max_qty_v5(Bybit.Client.t(), term(), term(), term()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Max Qty
   Method: GET
@@ -58,7 +59,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Required: symbol, side, orderPrice
   """
-  def get_max_qty(client, symbol, side, orderPrice) do
+  def get_max_qty_v5(client, symbol, side, orderPrice) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -82,14 +83,14 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec amend_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec amend_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Amend Order
   Method: POST
   Path: /v5/spread/order/amend
   Requires signature: true
   """
-  def amend_order(client, opts \\ []) do
+  def amend_order_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -121,14 +122,14 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec cancel_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel Order
   Method: POST
   Path: /v5/spread/order/cancel
   Requires signature: true
   """
-  def cancel_order(client, opts \\ []) do
+  def cancel_order_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -160,14 +161,14 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec cancel_all_orders(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec cancel_all_orders_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Cancel All Orders
   Method: POST
   Path: /v5/spread/order/cancel-all
   Requires signature: true
   """
-  def cancel_all_orders(client, opts \\ []) do
+  def cancel_all_orders_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -199,14 +200,14 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec create_order(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec create_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Create Order
   Method: POST
   Path: /v5/spread/order/create
   Requires signature: true
   """
-  def create_order(client, opts \\ []) do
+  def create_order_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -238,7 +239,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_order_history(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_order_history_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Order History
   Method: GET
@@ -246,7 +247,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Optional: symbol, baseCoin, orderId, orderLinkId, startTime, endTime, limit, cursor
   """
-  def get_order_history(client, opts \\ []) do
+  def get_order_history_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -279,7 +280,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_open_orders(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_open_orders_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Open Orders
   Method: GET
@@ -287,7 +288,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Optional: symbol, baseCoin, orderId, orderLinkId, limit, cursor
   """
-  def get_open_orders(client, opts \\ []) do
+  def get_open_orders_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -318,7 +319,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_instruments_info(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_instruments_info_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Instruments Info
   Method: GET
@@ -326,7 +327,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Optional: symbol, baseCoin, limit, cursor
   """
-  def get_instruments_info(client, opts \\ []) do
+  def get_instruments_info_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -355,7 +356,8 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_orderbook(Bybit.Client.t(), term(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_orderbook_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Orderbook
   Method: GET
@@ -364,7 +366,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Required: symbol
   Optional: limit
   """
-  def get_orderbook(client, symbol, opts \\ []) do
+  def get_orderbook_v5(client, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -388,7 +390,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_recent_public_trades(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_recent_public_trades_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Recent Public Trades
@@ -398,7 +400,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Required: symbol
   Optional: limit
   """
-  def get_recent_public_trades(client, symbol, opts \\ []) do
+  def get_recent_public_trades_v5(client, symbol, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -422,7 +424,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
     end
   end
 
-  @spec get_tickers(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_tickers_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Tickers
   Method: GET
@@ -430,7 +432,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
   Requires signature: true
   Required: symbol
   """
-  def get_tickers(client, symbol) do
+  def get_tickers_v5(client, symbol) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

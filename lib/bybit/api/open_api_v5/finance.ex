@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_custom_product_quote(Bybit.Client.t(), term(), term(), term(), term()) ::
+  @spec get_custom_product_quote_v5(Bybit.Client.t(), term(), term(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Custom Product Quote
@@ -19,7 +19,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Required: productId, initialPrice, lowerPrice, upperPrice
   """
-  def get_custom_product_quote(client, productId, initialPrice, lowerPrice, upperPrice) do
+  def get_custom_product_quote_v5(client, productId, initialPrice, lowerPrice, upperPrice) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -48,7 +48,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_redeem_estimated_amount(Bybit.Client.t(), term(), term()) ::
+  @spec get_redeem_estimated_amount_v5(Bybit.Client.t(), term(), term()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Redeem Estimated Amount
@@ -57,7 +57,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Required: category, positionIds
   """
-  def get_redeem_estimated_amount(client, category, positionIds) do
+  def get_redeem_estimated_amount_v5(client, category, positionIds) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -242,7 +242,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_product_quote(Bybit.Client.t(), term(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_product_quote_v5(Bybit.Client.t(), term(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Product Quote
   Method: GET
@@ -250,7 +250,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Required: category, productId
   """
-  def get_product_quote(client, category, productId) do
+  def get_product_quote_v5(client, category, productId) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -274,14 +274,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec add_liquidity(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec add_liquidity_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Add Liquidity
   Method: POST
   Path: /v5/earn/liquidity-mining/add-liquidity
   Requires signature: true
   """
-  def add_liquidity(client, opts \\ []) do
+  def add_liquidity_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -313,14 +313,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec add_margin(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec add_margin_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Add Margin
   Method: POST
   Path: /v5/earn/liquidity-mining/add-margin
   Requires signature: true
   """
-  def add_margin(client, opts \\ []) do
+  def add_margin_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -352,14 +352,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec claim_interest(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec claim_interest_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Claim Interest
   Method: POST
   Path: /v5/earn/liquidity-mining/claim-interest
   Requires signature: true
   """
-  def claim_interest(client, opts \\ []) do
+  def claim_interest_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -386,7 +386,8 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_liquidation_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_liquidation_records_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get Liquidation Records
   Method: GET
@@ -394,7 +395,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Optional: baseCoin, quoteCoin, startTime, endTime, limit, cursor
   """
-  def get_liquidation_records(client, opts \\ []) do
+  def get_liquidation_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -540,14 +541,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec reinvest(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec reinvest_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Reinvest
   Method: POST
   Path: /v5/earn/liquidity-mining/reinvest
   Requires signature: true
   """
-  def reinvest(client, opts \\ []) do
+  def reinvest_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -579,14 +580,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec remove_liquidity(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec remove_liquidity_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Remove Liquidity
   Method: POST
   Path: /v5/earn/liquidity-mining/remove-liquidity
   Requires signature: true
   """
-  def remove_liquidity(client, opts \\ []) do
+  def remove_liquidity_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -618,7 +619,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_yield_records(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_yield_records_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Yield Records
   Method: GET
@@ -626,7 +627,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Optional: baseCoin, quoteCoin, startTime, endTime, limit, cursor
   """
-  def get_yield_records(client, opts \\ []) do
+  def get_yield_records_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -657,7 +658,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_apr_history(Bybit.Client.t(), term(), term(), Keyword.t()) ::
+  @spec get_apr_history_v5(Bybit.Client.t(), term(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get APR History
@@ -667,7 +668,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: category, productId
   Optional: startTime, endTime
   """
-  def get_apr_history(client, category, productId, opts \\ []) do
+  def get_apr_history_v5(client, category, productId, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -696,7 +697,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_hourly_yield_history(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_hourly_yield_history_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Hourly Yield History
@@ -706,7 +707,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: category
   Optional: productId, startTime, endTime, limit, cursor
   """
-  def get_hourly_yield_history(client, category, opts \\ []) do
+  def get_hourly_yield_history_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -737,7 +738,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_stake_redeem_order_history(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_stake_redeem_order_history_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Stake/Redeem Order History
@@ -747,7 +748,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: category
   Optional: orderId, orderLinkId, productId, startTime, endTime, limit, cursor
   """
-  def get_stake_redeem_order_history(client, category, opts \\ []) do
+  def get_stake_redeem_order_history_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -780,14 +781,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec stake_redeem(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec stake_redeem_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Stake / Redeem
   Method: POST
   Path: /v5/earn/place-order
   Requires signature: true
   """
-  def stake_redeem(client, opts \\ []) do
+  def stake_redeem_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -819,7 +820,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_staked_position(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_staked_position_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Staked Position
@@ -829,7 +830,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: category
   Optional: productId, coin
   """
-  def get_staked_position(client, category, opts \\ []) do
+  def get_staked_position_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -857,14 +858,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec modify_position(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec modify_position_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Modify Position
   Method: POST
   Path: /v5/earn/position/modify
   Requires signature: true
   """
-  def modify_position(client, opts \\ []) do
+  def modify_position_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -930,7 +931,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_yield_history(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_yield_history_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Yield History
@@ -940,7 +941,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: category
   Optional: productId, startTime, endTime, limit, cursor
   """
-  def get_yield_history(client, category, opts \\ []) do
+  def get_yield_history_v5(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1090,14 +1091,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec set_auto_invest(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_auto_invest_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Auto-Invest
   Method: POST
   Path: /v5/earn/fixed-term/position/auto-invest
   Requires signature: true
   """
-  def set_auto_invest(client, opts \\ []) do
+  def set_auto_invest_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1162,14 +1163,14 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec redeem(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec redeem_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Redeem
   Method: POST
   Path: /v5/earn/fixed-term/redeem
   Requires signature: true
   """
-  def redeem(client, opts \\ []) do
+  def redeem_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1201,7 +1202,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_history_apr(Bybit.Client.t(), term(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_history_apr_v5(Bybit.Client.t(), term(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get History APR
   Method: GET
@@ -1209,7 +1210,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Requires signature: true
   Required: coin, range
   """
-  def get_history_apr(client, coin, range) do
+  def get_history_apr_v5(client, coin, range) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1233,7 +1234,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_hourly_yield_records(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_hourly_yield_records_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Hourly Yield Records
@@ -1243,7 +1244,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: coin
   Optional: startTime, endTime, cursor, limit
   """
-  def get_hourly_yield_records(client, coin, opts \\ []) do
+  def get_hourly_yield_records_v5(client, coin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1422,7 +1423,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec get_daily_yield_records(Bybit.Client.t(), term(), Keyword.t()) ::
+  @spec get_daily_yield_records_v5(Bybit.Client.t(), term(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Daily Yield Records
@@ -1432,7 +1433,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Required: coin
   Optional: startTime, endTime, cursor, limit
   """
-  def get_daily_yield_records(client, coin, opts \\ []) do
+  def get_daily_yield_records_v5(client, coin, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

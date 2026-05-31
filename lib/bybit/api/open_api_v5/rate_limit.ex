@@ -10,7 +10,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
     end
   end
 
-  @spec get_rate_limit(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
+  @spec get_rate_limit_v5(Bybit.Client.t(), term()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Rate Limit
   Method: GET
@@ -18,7 +18,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
   Requires signature: true
   Required: uids
   """
-  def get_rate_limit(client, uids) do
+  def get_rate_limit_v5(client, uids) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -42,7 +42,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
     end
   end
 
-  @spec get_all_rate_limits(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_all_rate_limits_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get All Rate Limits
   Method: GET
@@ -50,7 +50,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
   Requires signature: true
   Optional: limit, cursor, uids
   """
-  def get_all_rate_limits(client, opts \\ []) do
+  def get_all_rate_limits_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -78,14 +78,14 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
     end
   end
 
-  @spec get_rate_limit_cap(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_rate_limit_cap_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Rate Limit Cap
   Method: GET
   Path: /v5/apilimit/query-cap
   Requires signature: true
   """
-  def get_rate_limit_cap(client) do
+  def get_rate_limit_cap_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -109,14 +109,14 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
     end
   end
 
-  @spec set_rate_limit(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec set_rate_limit_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Set Rate Limit
   Method: POST
   Path: /v5/apilimit/set
   Requires signature: true
   """
-  def set_rate_limit(client, opts \\ []) do
+  def set_rate_limit_v5(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{

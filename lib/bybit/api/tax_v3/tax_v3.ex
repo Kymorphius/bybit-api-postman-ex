@@ -10,14 +10,15 @@ defmodule Bybit.API.TaxV3 do
     end
   end
 
-  @spec get_user_register_date(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_user_register_date_v3(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Get User Register Date
   Method: POST
   Path: /fht/compliance/tax/v3/private/registertime
   Requires signature: true
   """
-  def get_user_register_date(client, opts \\ []) do
+  def get_user_register_date_v3(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -42,14 +43,15 @@ defmodule Bybit.API.TaxV3 do
     end
   end
 
-  @spec request_export_report(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec request_export_report_v3(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Request Export Report
   Method: POST
   Path: /fht/compliance/tax/v3/private/create
   Requires signature: true
   """
-  def request_export_report(client, opts \\ []) do
+  def request_export_report_v3(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -82,7 +84,7 @@ defmodule Bybit.API.TaxV3 do
     end
   end
 
-  @spec get_export_report_status(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_export_report_status_v3(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Export Report Status
@@ -90,7 +92,7 @@ defmodule Bybit.API.TaxV3 do
   Path: /fht/compliance/tax/v3/private/status
   Requires signature: true
   """
-  def get_export_report_status(client, opts \\ []) do
+  def get_export_report_status_v3(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -118,14 +120,14 @@ defmodule Bybit.API.TaxV3 do
     end
   end
 
-  @spec retrieve_data_export(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec retrieve_data_export_v3(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Retrieve Data Export
   Method: POST
   Path: /fht/compliance/tax/v3/private/url
   Requires signature: true
   """
-  def retrieve_data_export(client, opts \\ []) do
+  def retrieve_data_export_v3(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
