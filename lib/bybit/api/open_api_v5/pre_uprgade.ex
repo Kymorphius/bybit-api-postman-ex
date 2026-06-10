@@ -42,7 +42,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -81,7 +81,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: limit,
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -117,7 +117,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -152,7 +152,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -186,7 +186,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -224,7 +224,7 @@ defmodule Bybit.API.OpenApiV5.PreUprgade do
             limit: limit,
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 

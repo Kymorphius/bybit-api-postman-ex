@@ -30,7 +30,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/exchange/query-coin-list",
           query: [accountType: accountType, coin: coin, side: Keyword.get(opts, :side)],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -57,7 +57,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/exchange/convert-result-query",
           query: [quoteTxId: quoteTxId, accountType: accountType],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -88,7 +88,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             index: Keyword.get(opts, :index),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -121,7 +121,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"accountType\": \"UNIFIED\",\n    \"fromCoin\": \"BTC\",\n    \"toCoin\": \"ETH\",\n    \"requestCoin\": \"BTC\",\n    \"requestAmount\": \"1\",\n    \"fromCoinType\": \"crypto\",\n    \"toCoinType\": \"crypto\",\n    \"paramType\": \"opFrom\",\n    \"paramValue\": \"\",\n    \"requestId\": \"123456\"\n}"
+                "{\n    \"accountType\": \"UNIFIED\",\n    \"fromCoin\": \"BTC\",\n    \"toCoin\": \"ETH\",\n    \"requestCoin\": \"BTC\",\n    \"requestAmount\": \"1\",\n    \"fromCoinType\": \"crypto\",\n    \"toCoinType\": \"crypto\",\n    \"paramType\": \"opFrom\",\n    \"paramValue\": \"broker-id-001\",\n    \"requestId\": \"123456\"\n}"
               )
           }
         })
@@ -193,7 +193,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             withTransferSafeAmount: Keyword.get(opts, :withTransferSafeAmount),
             withLtvTransferSafeAmount: Keyword.get(opts, :withLtvTransferSafeAmount)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -226,7 +226,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             coin: Keyword.get(opts, :coin),
             withBonus: Keyword.get(opts, :withBonus)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -252,7 +252,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/withdraw/withdrawable-amount",
           query: [coin: coin],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -280,7 +280,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/transfer/query-asset-info",
           query: [accountType: accountType, coin: Keyword.get(opts, :coin)],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -310,32 +310,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             valuationCurrency: Keyword.get(opts, :valuationCurrency),
             accountType: Keyword.get(opts, :accountType)
           ],
-          headers: [{"Content-Type", "application/json"}],
-          body: nil
-        })
-
-      Bybit.REST.HTTPClient.request(request)
-    end
-  end
-
-  @spec get_sub_uid_v5_11(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
-  @doc """
-  Get Sub UID
-  Method: GET
-  Path: /v5/asset/transfer/query-sub-member-list
-  Requires signature: true
-  """
-  def get_sub_uid_v5_11(client) do
-    with {:ok, base_url} <- base_url(client.env) do
-      {:ok, request} =
-        Bybit.RequestBuilder.build(%{
-          client: client,
-          requires_signature?: true,
-          method: "GET",
-          base_url: base_url,
-          url: "/v5/asset/transfer/query-sub-member-list",
-          query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -370,7 +345,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -405,7 +380,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -432,7 +407,15 @@ defmodule Bybit.API.OpenApiV5.Asset do
           url: "/v5/asset/transfer/save-transfer-sub-member",
           query: [],
           headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"subMemberIds\": []\n}")}
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"subMemberIds\": [\n        \"554117,592324,592334\"\n    ]\n}"
+              )
+          }
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -458,11 +441,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/transfer/query-transfer-coin-list",
           query: [fromAccountType: fromAccountType, toAccountType: toAccountType],
-          headers: [
-            {"Content-Type", "application/json"},
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"Content-Type", "application/json"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -529,7 +508,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"transferId\": \"be7a2462-1138-4e27-80b1-62653f24925e\",\n    \"coin\": \"USDC\",\n    \"amount\": \"5000\",\n    \"fromMemberId\": 0,\n    \"toMemberId\": 0,\n    \"fromAccountType\": \"\",\n    \"toAccountType\": \"\"\n}"
+                "{\n    \"transferId\": \"be7a2462-1138-4e27-80b1-62653f24925e\",\n    \"coin\": \"USDC\",\n    \"amount\": \"5000\",\n    \"fromMemberId\": 0,\n    \"toMemberId\": 0,\n    \"fromAccountType\": \"CONTRACT\",\n    \"toAccountType\": \"UNIFIED\"\n}"
               )
           }
         })
@@ -558,7 +537,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/deposit/query-address",
           query: [coin: coin, chainType: Keyword.get(opts, :chainType)],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -594,7 +573,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -660,7 +639,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -724,8 +703,42 @@ defmodule Bybit.API.OpenApiV5.Asset do
             cursor: Keyword.get(opts, :cursor),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec submit_deposit_originator_info_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Submit Deposit Originator Info
+  Method: POST
+  Path: /v5/asset/travel-rule/deposit/submit
+  Requires signature: false
+  """
+  def submit_deposit_originator_info_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/asset/travel-rule/deposit/submit",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"depositId\": 0,\n    \"subAccountId\": 0,\n    \"questionnaire\": \"{\\\"walletType\\\":0,\\\"vaspCode\\\":\\\"BINANCEUS_VASP\\\",\\\"legalType\\\":\\\"individual\\\",\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\":\\\"Smith\\\",\\\"transactionPurpose\\\":\\\"Personal investment in long-term holdings\\\"}\"\n}"
+              )
+          }
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -760,7 +773,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -792,7 +805,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"coin\": \"BTC\",\n    \"chain\": \"BTC\",\n    \"address\": \"n3Hy3vwUY1sqbXhvFbaCbtoM2ZnbSnqa1J\",\n    \"tag\": \"\",\n    \"amount\": \"0.0213\",\n    \"timestamp\": 0,\n    \"forceChain\": 0,\n    \"accountType\": \"FUND\",\n    \"feeType\": 0,\n    \"requestId\": \"123456\",\n    \"transactionPurpose\": \"\"\n}"
+                "{\n    \"coin\": \"BTC\",\n    \"chain\": \"BTC\",\n    \"address\": \"n3Hy3vwUY1sqbXhvFbaCbtoM2ZnbSnqa1J\",\n    \"tag\": \"\",\n    \"amount\": \"0.0213\",\n    \"timestamp\": 0,\n    \"forceChain\": 0,\n    \"accountType\": \"FUND\",\n    \"feeType\": 0,\n    \"requestId\": \"123456\",\n    \"transactionPurpose\": \"\",\n    \"questionnaire\": \"beneficiary\"\n}"
               )
           }
         })
@@ -851,7 +864,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -876,7 +889,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/withdraw/vasp/list",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -911,7 +924,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -944,7 +957,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: limit,
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -970,7 +983,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/coin/query-info",
           query: [coin: coin],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -978,14 +991,14 @@ defmodule Bybit.API.OpenApiV5.Asset do
     end
   end
 
-  @spec get_sub_uid_v5_32(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @spec get_sub_uid_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Get Sub UID
   Method: GET
   Path: /v5/asset/transfer/query-sub-member-list
   Requires signature: true
   """
-  def get_sub_uid_v5_32(client) do
+  def get_sub_uid_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -995,7 +1008,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/transfer/query-sub-member-list",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -1031,7 +1044,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -1064,7 +1077,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"accountType\": \"eb_convert_uta\",\n    \"fromCoinList\": [],\n    \"toCoin\": \"\"\n}"
+                "{\n    \"accountType\": \"eb_convert_uta\",\n    \"fromCoinList\": [\n        \"XRP\",\n        \"SOL\"\n    ],\n    \"toCoin\": \"USDC\"\n}"
               )
           }
         })
@@ -1124,7 +1137,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             cursor: Keyword.get(opts, :cursor),
             size: Keyword.get(opts, :size)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1152,7 +1165,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/covert/small-balance-list",
           query: [accountType: accountType, fromCoin: Keyword.get(opts, :fromCoin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1184,7 +1197,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1211,7 +1224,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/portfolio-margin",
           query: [baseCoin: Keyword.get(opts, :baseCoin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1238,7 +1251,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/asset/total-members-assets",
           query: [coin: Keyword.get(opts, :coin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1264,7 +1277,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/fiat/balance-query",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1291,7 +1304,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/fiat/query-coin-list",
           query: [side: Keyword.get(opts, :side)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1323,7 +1336,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             startTime: Keyword.get(opts, :startTime),
             endTime: Keyword.get(opts, :endTime)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1356,7 +1369,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"fromCoin\": \"\",\n    \"fromCoinType\": \"fiat\",\n    \"toCoin\": \"\",\n    \"toCoinType\": \"fiat\",\n    \"requestAmount\": \"\",\n    \"requestCoinType\": \"fiat\"\n}"
+                "{\n    \"fromCoin\": \"ETH\",\n    \"fromCoinType\": \"fiat\",\n    \"toCoin\": \"BTC\",\n    \"toCoinType\": \"fiat\",\n    \"requestAmount\": \"0.1\",\n    \"requestCoinType\": \"fiat\"\n}"
               )
           }
         })
@@ -1383,7 +1396,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
           base_url: base_url,
           url: "/v5/fiat/reference-price",
           query: [symbol: symbol],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1447,7 +1460,7 @@ defmodule Bybit.API.OpenApiV5.Asset do
             tradeNo: Keyword.get(opts, :tradeNo),
             merchantRequestId: Keyword.get(opts, :merchantRequestId)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

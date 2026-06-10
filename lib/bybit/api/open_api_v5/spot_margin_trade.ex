@@ -30,7 +30,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/data",
           query: [vipLevel: Keyword.get(opts, :vipLevel), currency: currency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -63,7 +63,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             startTime: startTime,
             endTime: endTime
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -88,7 +88,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/state",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -175,7 +175,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/coinstate",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -202,7 +202,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/collateral",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -228,7 +228,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/currency-data",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -260,7 +260,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"orderCurrency\": \"\",\n    \"orderAmount\": \"\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\",\n    \"repayType\": \"2\"\n}"
+                "{\n    \"orderCurrency\": \"BTC\",\n    \"orderAmount\": \"0.01\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\",\n    \"repayType\": \"2\"\n}"
               )
           }
         })
@@ -294,7 +294,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -328,7 +328,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -362,7 +362,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -417,7 +417,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/get-auto-repay-mode",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -443,7 +443,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/liability",
           query: [currency: currency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -469,7 +469,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/max-borrowable",
           query: [currency: currency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -495,7 +495,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/position-tiers",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -522,7 +522,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
           base_url: base_url,
           url: "/v5/spot-margin-trade/repayment-available-amount",
           query: [currency: currency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -554,7 +554,7 @@ defmodule Bybit.API.OpenApiV5.SpotMarginTrade do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"currency\": \"USDT\",\n    \"autoRepayMode\": \"\"\n}"
+                "{\n    \"currency\": \"USDT\",\n    \"autoRepayMode\": \"1\"\n}"
               )
           }
         })

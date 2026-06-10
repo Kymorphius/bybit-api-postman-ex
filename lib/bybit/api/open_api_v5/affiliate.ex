@@ -37,7 +37,40 @@ defmodule Bybit.API.OpenApiV5.Affiliate do
             startDate: Keyword.get(opts, :startDate),
             endDate: Keyword.get(opts, :endDate)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_affiliate_sub_affiliate_list_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Affiliate Sub-Affiliate List
+  Method: GET
+  Path: /v5/affiliate/affiliate-sub-list
+  Requires signature: false
+  Optional: cursor, size, startDate, endDate, subAffId
+  """
+  def get_affiliate_sub_affiliate_list_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/affiliate/affiliate-sub-list",
+          query: [
+            cursor: Keyword.get(opts, :cursor),
+            size: Keyword.get(opts, :size),
+            startDate: Keyword.get(opts, :startDate),
+            endDate: Keyword.get(opts, :endDate),
+            subAffId: Keyword.get(opts, :subAffId)
+          ],
+          headers: [],
           body: nil
         })
 

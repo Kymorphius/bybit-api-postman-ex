@@ -37,7 +37,7 @@ defmodule Bybit.API.OpenApiV5.Order do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"linear\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"1\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
+                "{\n    \"category\": \"linear\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"rpiTakerAccess\": false,\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"1\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
               )
           }
         })
@@ -77,7 +77,7 @@ defmodule Bybit.API.OpenApiV5.Order do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"option\",\n    \"symbol\": \"BTC-21APR23-20000-C\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.01\",\n    \"marketUnit\": \"qty\",\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"8000\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
+                "{\n    \"category\": \"option\",\n    \"symbol\": \"BTC-21APR23-20000-C\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.01\",\n    \"marketUnit\": \"qty\",\n    \"rpiTakerAccess\": false,\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"8000\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
               )
           }
         })
@@ -117,7 +117,7 @@ defmodule Bybit.API.OpenApiV5.Order do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"spot\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Sell\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"30000\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
+                "{\n    \"category\": \"spot\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Sell\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"rpiTakerAccess\": false,\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"30000\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
               )
           }
         })
@@ -157,7 +157,7 @@ defmodule Bybit.API.OpenApiV5.Order do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"inverse\",\n    \"symbol\": \"ETHUSD\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.1\",\n    \"marketUnit\": \"qty\",\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"1818.00\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
+                "{\n    \"category\": \"inverse\",\n    \"symbol\": \"ETHUSD\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.1\",\n    \"marketUnit\": \"qty\",\n    \"rpiTakerAccess\": false,\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"1818.00\",\n    \"triggerDirection\": 0,\n    \"orderFilter\": \"Order\",\n    \"triggerPrice\": \"1\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
               )
           }
         })
@@ -193,7 +193,7 @@ defmodule Bybit.API.OpenApiV5.Order do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"spot\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"20000\",\n    \"triggerDirection\": 1,\n    \"orderFilter\": \"tpslOrder\",\n    \"triggerPrice\": \"27265\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
+                "{\n    \"category\": \"spot\",\n    \"symbol\": \"BTCUSDT\",\n    \"isLeverage\": 0,\n    \"side\": \"Buy\",\n    \"orderType\": \"Market\",\n    \"qty\": \"0.001\",\n    \"marketUnit\": \"qty\",\n    \"rpiTakerAccess\": false,\n    \"slippageToleranceType\": \"TickSize\",\n    \"slippageTolerance\": \"1\",\n    \"price\": \"20000\",\n    \"triggerDirection\": 1,\n    \"orderFilter\": \"tpslOrder\",\n    \"triggerPrice\": \"27265\",\n    \"triggerBy\": \"LastPrice\",\n    \"orderIv\": \"0.1\",\n    \"timeInForce\": \"IOC\",\n    \"positionIdx\": 0,\n    \"orderLinkId\": \"123456\",\n    \"takeProfit\": \"1\",\n    \"stopLoss\": \"1\",\n    \"tpTriggerBy\": \"MarkPrice\",\n    \"slTriggerBy\": \"MarkPrice\",\n    \"reduceOnly\": false,\n    \"closeOnTrigger\": false,\n    \"smpType\": \"\",\n    \"mmp\": false,\n    \"tpslMode\": \"Full\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\",\n    \"bboSideType\": \"Queue\",\n    \"bboLevel\": \"2\"\n}"
               )
           }
         })
@@ -470,11 +470,7 @@ defmodule Bybit.API.OpenApiV5.Order do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [
-            {"X-BAPI-SIGN-TYPE", "2"},
-            {"Content-Type", "application/json"},
-            {"cdn-request-id", "tttt"}
-          ],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"cdn-request-id", "tttt"}],
           body: nil
         })
 
@@ -515,7 +511,7 @@ defmodule Bybit.API.OpenApiV5.Order do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -544,7 +540,7 @@ defmodule Bybit.API.OpenApiV5.Order do
           base_url: base_url,
           url: "/v5/order/spot-borrow-check",
           query: [category: category, symbol: symbol, side: side],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -584,7 +580,7 @@ defmodule Bybit.API.OpenApiV5.Order do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 

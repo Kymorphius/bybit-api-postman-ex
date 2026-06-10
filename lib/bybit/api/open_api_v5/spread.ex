@@ -36,7 +36,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -63,7 +63,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
           base_url: base_url,
           url: "/v5/spread/max-qty",
           query: [symbol: symbol, side: side, orderPrice: orderPrice],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -230,7 +230,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -263,7 +263,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -294,7 +294,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -322,7 +322,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
           base_url: base_url,
           url: "/v5/spread/orderbook",
           query: [symbol: symbol, limit: Keyword.get(opts, :limit)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -350,7 +350,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
           base_url: base_url,
           url: "/v5/spread/recent-trade",
           query: [symbol: symbol, limit: Keyword.get(opts, :limit)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -376,7 +376,7 @@ defmodule Bybit.API.OpenApiV5.Spread do
           base_url: base_url,
           url: "/v5/spread/tickers",
           query: [symbol: symbol],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

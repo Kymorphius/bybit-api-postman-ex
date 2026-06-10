@@ -28,7 +28,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
           base_url: base_url,
           url: "/v5/apilimit/query",
           query: [uids: uids],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -58,7 +58,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
             cursor: Keyword.get(opts, :cursor),
             uids: Keyword.get(opts, :uids)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -83,7 +83,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
           base_url: base_url,
           url: "/v5/apilimit/query-cap",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -115,7 +115,7 @@ defmodule Bybit.API.OpenApiV5.RateLimit do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"list\": [\n        {\n            \"uids\": \"\",\n            \"bizType\": \"\",\n            \"rate\": 0\n        }\n    ]\n}"
+                "{\n    \"list\": [\n        {\n            \"uids\": \"106293838\",\n            \"bizType\": \"DERIVATIVES\",\n            \"rate\": 0\n        }\n    ]\n}"
               )
           }
         })

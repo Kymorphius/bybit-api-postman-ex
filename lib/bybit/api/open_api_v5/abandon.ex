@@ -28,7 +28,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
           base_url: base_url,
           url: "/v5/ins-loan/ensure-tokens",
           query: [productId: Keyword.get(opts, :productId)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -54,7 +54,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
           base_url: base_url,
           url: "/v5/lending/account",
           query: [coin: coin],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -87,7 +87,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
             limit: Keyword.get(opts, :limit),
             orderType: Keyword.get(opts, :orderType)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -114,7 +114,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
           base_url: base_url,
           url: "/v5/lending/info",
           query: [coin: Keyword.get(opts, :coin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -146,7 +146,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"coin\": \"USDT\",\n    \"quantity\": \"\",\n    \"serialNo\": \"\"\n}"
+                "{\n    \"coin\": \"USDT\",\n    \"quantity\": \"20.00005\",\n    \"serialNo\": \"test-00007\"\n}"
               )
           }
         })
@@ -179,7 +179,7 @@ defmodule Bybit.API.OpenApiV5.Abandon do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"coin\": \"USDT\",\n    \"quantity\": \"\",\n    \"serialNo\": \"\"\n}"
+                "{\n    \"coin\": \"USDT\",\n    \"quantity\": \"0.1\",\n    \"serialNo\": \"\"\n}"
               )
           }
         })

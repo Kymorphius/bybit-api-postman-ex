@@ -34,7 +34,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"chainCode\": \"ETH\",\n    \"tokenAddress\": \"\"\n}"
+                "{\n    \"chainCode\": \"ETH\",\n    \"tokenAddress\": \"0x6982508145454ce325ddbe47a25d4ec3d2311933\"\n}"
               )
           }
         })
@@ -92,7 +92,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"chainCode\": \"ETH\",\n    \"tokenAddress\": \"\"\n}"
+                "{\n    \"chainCode\": \"ETH\",\n    \"tokenAddress\": \"0x6982508145454ce325ddbe47a25d4ec3d2311933\"\n}"
               )
           }
         })
@@ -150,7 +150,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"tokenAddressInfo\": [\n        {\n            \"chainCode\": \"ETH\",\n            \"tokenAddress\": \"\"\n        }\n    ]\n}"
+                "{\n    \"tokenAddressInfo\": [\n        {\n            \"chainCode\": \"ETH\",\n            \"tokenAddress\": \"0x6982508145454ce325ddbe47a25d4ec3d2311933\"\n        },\n        {\n            \"chainCode\": \"SOL\",\n            \"tokenAddress\": \"DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263\"\n        }\n    ]\n}"
               )
           }
         })
@@ -217,7 +217,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"chainCode\": \"SOL\",\n    \"tokenAddress\": \"\"\n}"
+                "{\n    \"chainCode\": \"SOL\",\n    \"tokenAddress\": \"Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB\"\n}"
               )
           }
         })
@@ -250,7 +250,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"fromTokenCode\": \"CEX_<id>\",\n    \"fromTokenAmount\": \"\",\n    \"toTokenCode\": \"DEX_<id>\",\n    \"slippage\": \"0.005\",\n    \"quoteData\": \"/quote\",\n    \"gas\": \"/quote\",\n    \"quoteMode\": 0,\n    \"correctingCode\": \"/quote\",\n    \"tenant\": \"\"\n}"
+                "{\n    \"fromTokenCode\": \"CEX_<id>\",\n    \"fromTokenAmount\": \"100\",\n    \"toTokenCode\": \"DEX_<id>\",\n    \"slippage\": \"0.005\",\n    \"quoteData\": \"/quote\",\n    \"gas\": \"/quote\",\n    \"quoteMode\": 0,\n    \"correctingCode\": \"/quote\",\n    \"tenant\": \"\"\n}"
               )
           }
         })
@@ -283,7 +283,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"tradeType\": 0,\n    \"fromTokenCode\": \"CEX_<id>\",\n    \"fromTokenAmount\": \"\",\n    \"toTokenCode\": \"CEX_<id>\",\n    \"quoteMode\": 0\n}"
+                "{\n    \"tradeType\": 0,\n    \"fromTokenCode\": \"CEX_<id>\",\n    \"fromTokenAmount\": \"100\",\n    \"toTokenCode\": \"CEX_<id>\",\n    \"quoteMode\": 0\n}"
               )
           }
         })
@@ -316,7 +316,7 @@ defmodule Bybit.API.OpenApiV5.Alpha do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"fromTokenCode\": \"DEX_<id>\",\n    \"fromTokenAmount\": \"\",\n    \"toTokenCode\": \"CEX_<id>\",\n    \"slippage\": \"0.005\",\n    \"quoteData\": \"/quote\",\n    \"gas\": \"/quote\",\n    \"quoteMode\": 0,\n    \"correctingCode\": \"/quote\",\n    \"tenant\": \"\"\n}"
+                "{\n    \"fromTokenCode\": \"DEX_<id>\",\n    \"fromTokenAmount\": \"10000000\",\n    \"toTokenCode\": \"CEX_<id>\",\n    \"slippage\": \"0.005\",\n    \"quoteData\": \"/quote\",\n    \"gas\": \"/quote\",\n    \"quoteMode\": 0,\n    \"correctingCode\": \"/quote\",\n    \"tenant\": \"\"\n}"
               )
           }
         })

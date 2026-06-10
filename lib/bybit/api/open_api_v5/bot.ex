@@ -34,7 +34,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"bot_id\": \"123456\",\n    \"close_mode\": \"2\"\n}"
+                "{\n    \"botid\": \"123456\",\n    \"closemode\": \"2\"\n}"
               )
           }
         })
@@ -67,7 +67,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"parameters\": {\n        \"frequency_in_second\": 0,\n        \"quote_coin\": \"USDT\",\n        \"pairs\": [\n            {\n                \"base\": \"BTC\",\n                \"amount\": \"1\"\n            }\n        ],\n        \"max_invest_amount\": \"\"\n    }\n}"
+                "{\n    \"parameters\": {\n        \"frequencyinsecond\": 0,\n        \"quotecoin\": \"USDT\",\n        \"pairs\": [\n            {\n                \"base\": \"BTC\",\n                \"amount\": \"1\"\n            },\n            {\n                \"base\": \"ETH\",\n                \"amount\": \"88\"\n            }\n        ],\n        \"maxinvestamount\": \"\"\n    }\n}"
               )
           }
         })
@@ -94,7 +94,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fcombobot/close",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -125,7 +125,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"leverage\": \"\\\"5\\\"\",\n    \"init_margin\": \"\\\"1000\\\"\",\n    \"adjust_position_mode\": 0,\n    \"symbol_settings\": [\n        {\n            \"symbol\": \"BTCUSDT\",\n            \"target_position_percent\": \"\\\"0.5\\\"\",\n            \"side\": 0\n        }\n    ],\n    \"adjust_position_percent\": \"\\\"0.05\\\"\",\n    \"adjust_position_time_interval\": 0,\n    \"sl_percent\": \"\\\"0.2\\\"\",\n    \"tp_percent\": \"\\\"0.5\\\"\",\n    \"trailing_stop_percent\": \"\\\"0.05\\\"\"\n}"
+                "{\n    \"leverage\": \"\\\"5\\\"\",\n    \"initmargin\": \"\\\"1000\\\"\",\n    \"adjustpositionmode\": 0,\n    \"symbolsettings\": [\n        {\n            \"symbol\": \"BTCUSDT\",\n            \"targetpositionpercent\": \"\\\"0.5\\\"\",\n            \"side\": 0\n        }\n    ],\n    \"adjustpositionpercent\": \"\\\"0.05\\\"\",\n    \"adjustpositiontimeinterval\": 0,\n    \"slpercent\": \"\\\"0.2\\\"\",\n    \"tppercent\": \"\\\"0.5\\\"\",\n    \"trailingstoppercent\": \"\\\"0.05\\\"\"\n}"
               )
           }
         })
@@ -152,7 +152,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fcombobot/detail",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -184,7 +184,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"leverage\": \"\\\"5\\\"\",\n    \"init_margin\": \"\",\n    \"adjust_position_mode\": 0,\n    \"symbol_settings\": [\n        {\n            \"symbol\": \"BTCUSDT\",\n            \"target_position_percent\": \"\",\n            \"side\": 0\n        }\n    ],\n    \"adjust_position_percent\": \"\",\n    \"adjust_position_time_interval\": 0,\n    \"sl_percent\": \"\\\"0.2\\\"\",\n    \"tp_percent\": \"\\\"0.5\\\"\",\n    \"trailing_stop_percent\": \"\\\"0.05\\\"\",\n    \"need_to_slippage\": false\n}"
+                "{\n    \"leverage\": \"\\\"5\\\"\",\n    \"initmargin\": \"\",\n    \"adjustpositionmode\": 0,\n    \"symbolsettings\": [\n        {\n            \"symbol\": \"BTCUSDT\",\n            \"targetpositionpercent\": \"\",\n            \"side\": 0\n        }\n    ],\n    \"adjustpositionpercent\": \"\",\n    \"adjustpositiontimeinterval\": 0,\n    \"slpercent\": \"\\\"0.2\\\"\",\n    \"tppercent\": \"\\\"0.5\\\"\",\n    \"trailingstoppercent\": \"\\\"0.05\\\"\",\n    \"needtoslippage\": false\n}"
               )
           }
         })
@@ -212,7 +212,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fgridbot/close",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -244,7 +244,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"grid_mode\": 0,\n    \"min_price\": \"\",\n    \"max_price\": \"\",\n    \"cell_number\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"grid_type\": 0,\n    \"total_investment\": \"\\\"1000\\\"\",\n    \"take_profit_per\": \"\\\"0.2\\\"\",\n    \"stop_loss_per\": \"\\\"0.1\\\"\",\n    \"take_profit_price\": \"tp_sl_type\",\n    \"stop_loss_price\": \"tp_sl_type\",\n    \"tp_sl_type\": 0,\n    \"entry_price\": \"\",\n    \"trailing_stop_per\": \"\\\"0.05\\\"\",\n    \"move_up_price\": \"2\",\n    \"move_down_price\": \"2\"\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"gridmode\": 0,\n    \"minprice\": \"1\",\n    \"maxprice\": \"1\",\n    \"cellnumber\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"gridtype\": 0,\n    \"totalinvestment\": \"\\\"1000\\\"\",\n    \"takeprofitper\": \"\\\"0.2\\\"\",\n    \"stoplossper\": \"\\\"0.1\\\"\",\n    \"takeprofitprice\": \"1\",\n    \"stoplossprice\": \"1\",\n    \"tpsltype\": 0,\n    \"entryprice\": \"1\",\n    \"trailingstopper\": \"\\\"0.05\\\"\",\n    \"moveupprice\": \"1\",\n    \"movedownprice\": \"1\"\n}"
               )
           }
         })
@@ -272,7 +272,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fgridbot/detail",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -304,7 +304,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"cell_number\": 0,\n    \"min_price\": \"\",\n    \"max_price\": \"\",\n    \"leverage\": \"\\\"5\\\"\",\n    \"grid_type\": 0,\n    \"grid_mode\": 0,\n    \"stop_loss_price\": \"tp_sl_type\",\n    \"take_profit_price\": \"tp_sl_type\",\n    \"tp_sl_type\": 0,\n    \"entry_price\": \"\",\n    \"stop_loss_per\": \"\\\"10\\\"\",\n    \"take_profit_per\": \"\\\"20\\\"\",\n    \"trailing_stop_per\": \"\\\"5\\\"\",\n    \"init_margin\": \"\",\n    \"move_up_price\": \"\",\n    \"move_down_price\": \"\"\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"cellnumber\": 0,\n    \"minprice\": \"1\",\n    \"maxprice\": \"1\",\n    \"leverage\": \"\\\"5\\\"\",\n    \"gridtype\": 0,\n    \"gridmode\": 0,\n    \"stoplossprice\": \"1\",\n    \"takeprofitprice\": \"1\",\n    \"tpsltype\": 0,\n    \"entryprice\": \"1\",\n    \"stoplossper\": \"\\\"10\\\"\",\n    \"takeprofitper\": \"\\\"20\\\"\",\n    \"trailingstopper\": \"\\\"5\\\"\",\n    \"initmargin\": \"\",\n    \"moveupprice\": \"1\",\n    \"movedownprice\": \"1\"\n}"
               )
           }
         })
@@ -331,7 +331,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fmartingalebot/close",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -363,7 +363,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"martingale_mode\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"price_float_percent\": \"\\\"0.015\\\"\",\n    \"add_position_percent\": \"\\\"1.1\\\"\",\n    \"add_position_num\": 0,\n    \"init_margin\": \"\\\"1000\\\"\",\n    \"round_tp_percent\": \"\\\"0.03\\\"\",\n    \"auto_cycle_toggle\": 0,\n    \"sl_percent\": \"\\\"0.2\\\"\",\n    \"entry_price\": \"\"\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"martingalemode\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"pricefloatpercent\": \"1\",\n    \"addpositionpercent\": \"\\\"1.1\\\"\",\n    \"addpositionnum\": 0,\n    \"initmargin\": \"\\\"1000\\\"\",\n    \"roundtppercent\": \"\\\"0.03\\\"\",\n    \"autocycletoggle\": 0,\n    \"slpercent\": \"\\\"0.2\\\"\",\n    \"entryprice\": \"1\"\n}"
               )
           }
         })
@@ -391,7 +391,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/fmartingalebot/detail",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"bot_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"botid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -423,7 +423,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"martingale_mode\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"price_float_percent\": \"\\\"0.015\\\"\",\n    \"add_position_percent\": \"\\\"1\\\"\",\n    \"add_position_num\": 0,\n    \"init_margin\": \"\",\n    \"round_tp_percent\": \"\\\"0.03\\\"\",\n    \"sl_percent\": \"\\\"0.2\\\"\",\n    \"entry_price\": \"\",\n    \"need_to_slippage\": false\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"martingalemode\": 0,\n    \"leverage\": \"\\\"5\\\"\",\n    \"pricefloatpercent\": \"1\",\n    \"addpositionpercent\": \"\\\"1\\\"\",\n    \"addpositionnum\": 0,\n    \"initmargin\": \"\",\n    \"roundtppercent\": \"\\\"0.03\\\"\",\n    \"slpercent\": \"\\\"0.2\\\"\",\n    \"entryprice\": \"1\",\n    \"needtoslippage\": false\n}"
               )
           }
         })
@@ -457,7 +457,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"grid_id\": \"123456\",\n    \"close_mode\": \"2\"\n}"
+                "{\n    \"gridid\": \"123456\",\n    \"closemode\": \"2\"\n}"
               )
           }
         })
@@ -491,7 +491,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"max_price\": \"\",\n    \"min_price\": \"\",\n    \"cell_number\": 0,\n    \"invest_mode\": 0,\n    \"base_investment\": \"invest_mode\",\n    \"quote_investment\": \"invest_mode\",\n    \"entry_price\": \"\",\n    \"stop_loss_price\": \"\",\n    \"take_profit_price\": \"\",\n    \"ts_percent\": \"[0, 0.99]\",\n    \"enable_trailing\": false,\n    \"limit_up_price\": \"\"\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"maxprice\": \"1\",\n    \"minprice\": \"1\",\n    \"cellnumber\": 0,\n    \"investmode\": 0,\n    \"baseinvestment\": \"invest_mode\",\n    \"quoteinvestment\": \"invest_mode\",\n    \"entryprice\": \"1\",\n    \"stoplossprice\": \"1\",\n    \"takeprofitprice\": \"1\",\n    \"tspercent\": \"[0, 0.99]\",\n    \"enabletrailing\": false,\n    \"limitupprice\": \"1\"\n}"
               )
           }
         })
@@ -519,7 +519,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
           url: "/v5/grid/query-grid-detail",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"grid_id\": \"123456\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"gridid\": \"123456\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -551,7 +551,7 @@ defmodule Bybit.API.OpenApiV5.Bot do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"symbol\": \"BTCUSDT\",\n    \"cell_number\": 0,\n    \"min_price\": \"\",\n    \"max_price\": \"min_price\",\n    \"invest_mode\": 0,\n    \"base_investment\": \"invest_mode\",\n    \"quote_investment\": \"invest_mode\",\n    \"stop_loss\": \"\",\n    \"take_profit\": \"\",\n    \"entry_price\": \"\",\n    \"ts_percent\": \"[0, 0.99]\",\n    \"enable_trailing\": false,\n    \"limit_up_price\": \"\"\n}"
+                "{\n    \"symbol\": \"BTCUSDT\",\n    \"cellnumber\": 0,\n    \"minprice\": \"1\",\n    \"maxprice\": \"1\",\n    \"investmode\": 0,\n    \"baseinvestment\": \"invest_mode\",\n    \"quoteinvestment\": \"invest_mode\",\n    \"stoploss\": \"\",\n    \"takeprofit\": \"\",\n    \"entryprice\": \"1\",\n    \"tspercent\": \"[0, 0.99]\",\n    \"enabletrailing\": false,\n    \"limitupprice\": \"1\"\n}"
               )
           }
         })

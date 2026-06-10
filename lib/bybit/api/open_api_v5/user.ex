@@ -97,7 +97,7 @@ defmodule Bybit.API.OpenApiV5.User do
           base_url: base_url,
           url: "/v5/user/query-sub-members",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -129,7 +129,7 @@ defmodule Bybit.API.OpenApiV5.User do
             pageSize: Keyword.get(opts, :pageSize),
             nextCursor: Keyword.get(opts, :nextCursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -154,7 +154,7 @@ defmodule Bybit.API.OpenApiV5.User do
           base_url: base_url,
           url: "/v5/user/query-api",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -186,7 +186,7 @@ defmodule Bybit.API.OpenApiV5.User do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -212,7 +212,7 @@ defmodule Bybit.API.OpenApiV5.User do
           base_url: base_url,
           url: "/v5/user/get-member-type",
           query: [memberIds: Keyword.get(opts, :memberIds)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -244,7 +244,7 @@ defmodule Bybit.API.OpenApiV5.User do
             coin: Keyword.get(opts, :coin),
             business: Keyword.get(opts, :business)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -333,7 +333,7 @@ defmodule Bybit.API.OpenApiV5.User do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"readOnly\": 0,\n    \"permissions\": {\n        \"ContractTrade\": [\n            \"Order\",\n            \"Position\"\n        ],\n        \"Spot\": [\n            \"SpotTrade\"\n        ],\n        \"Wallet\": [\n            \"AccountTransfer\",\n            \"SubMemberTransfer\"\n        ],\n        \"Options\": [\n            \"OptionsTrade\"\n        ],\n        \"Exchange\": [\n            \"ExchangeHistory\"\n        ],\n        \"Earn\": [],\n        \"FiatP2P\": [],\n        \"FiatBitPay\": [],\n        \"FiatConvertBroker\": [],\n        \"BitCard\": [],\n        \"ByXPost\": [],\n        \"Affiliate\": [],\n        \"Derivatives\": [\n            \"DerivativesTrade\"\n        ],\n        \"BlockTrade\": [\n            \"BlockTrade\"\n        ],\n        \"FiatBybitPay\": []\n    }\n}"
+                "{\n    \"readOnly\": 0,\n    \"permissions\": {\n        \"ContractTrade\": [\n            \"Order\",\n            \"Position\"\n        ],\n        \"Spot\": [\n            \"SpotTrade\"\n        ],\n        \"Wallet\": [\n            \"AccountTransfer\",\n            \"SubMemberTransfer\"\n        ],\n        \"Options\": [\n            \"OptionsTrade\"\n        ],\n        \"Exchange\": [\n            \"ExchangeHistory\"\n        ],\n        \"Earn\": [],\n        \"FiatP2P\": [],\n        \"FiatBitPay\": [],\n        \"FiatConvertBroker\": [],\n        \"BitCard\": [],\n        \"ByXPost\": [],\n        \"Affiliate\": [],\n        \"Derivatives\": [\n            \"DerivativesTrade\"\n        ],\n        \"BlockTrade\": [\n            \"BlockTrade\"\n        ]\n    }\n}"
               )
           }
         })
@@ -447,7 +447,7 @@ defmodule Bybit.API.OpenApiV5.User do
             pageSize: Keyword.get(opts, :pageSize),
             nextCursor: Keyword.get(opts, :nextCursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -477,7 +477,7 @@ defmodule Bybit.API.OpenApiV5.User do
             size: Keyword.get(opts, :size),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

@@ -35,7 +35,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"currency\": \"USDT\",\n    \"amount\": \"1\",\n    \"direction\": \"\"\n}"
+                "{\n    \"currency\": \"USDT\",\n    \"amount\": \"1\",\n    \"direction\": \"1\"\n}"
               )
           }
         })
@@ -68,7 +68,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -94,7 +94,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/collateral-data",
           query: [currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -120,7 +120,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/loanable-data",
           query: [vipLevel: Keyword.get(opts, :vipLevel), currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -147,7 +147,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/max-collateral-amount",
           query: [currency: currency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -180,7 +180,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"currency\": \"USDT\",\n    \"collateralList\": [\n        {\n            \"amount\": \"1\",\n            \"ccy\": \"amount\"\n        }\n    ]\n}"
+                "{\n    \"currency\": \"USDT\",\n    \"collateralList\": [\n        {\n            \"amount\": \"1\",\n            \"ccy\": \"amount\"\n        },\n        {\n            \"amount\": \"1000\",\n            \"ccy\": \"USDT\"\n        }\n    ]\n}"
               )
           }
         })
@@ -206,7 +206,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-common/position",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -238,7 +238,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"orderCurrency\": \"\",\n    \"orderAmount\": \"\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\",\n    \"autoRepay\": \"\\\"true\\\"\",\n    \"repayType\": \"2\",\n    \"collateralList\": [\n        {\n            \"currency\": \"USDT\",\n            \"amount\": \"1\"\n        }\n    ]\n}"
+                "{\n    \"orderCurrency\": \"ETH\",\n    \"orderAmount\": \"1.5\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\",\n    \"autoRepay\": \"\\\"true\\\"\",\n    \"repayType\": \"2\",\n    \"collateralList\": [\n        {\n            \"currency\": \"USDT\",\n            \"amount\": \"1\"\n        }\n    ]\n}"
               )
           }
         })
@@ -273,7 +273,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -332,7 +332,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -366,7 +366,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -464,7 +464,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -530,7 +530,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -562,7 +562,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"orderCurrency\": \"\",\n    \"orderAmount\": \"\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\"\n}"
+                "{\n    \"orderCurrency\": \"USDT\",\n    \"orderAmount\": \"2002.21\",\n    \"annualRate\": \"0.02\",\n    \"term\": \"7\",\n    \"availableSource\": \"2\"\n}"
               )
           }
         })
@@ -597,7 +597,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -623,7 +623,15 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           url: "/v5/crypto-loan-fixed/supply-order-cancel",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"orderId\": \"123456\"\n}")}
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"orderId\": \"123456\",\n    \"refundedAccount\": \"\"\n}"
+              )
+          }
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -656,7 +664,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -690,7 +698,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             sort: Keyword.get(opts, :sort),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -722,7 +730,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"loanCurrency\": \"\",\n    \"loanAmount\": \"\",\n    \"collateralList\": [\n        {\n            \"currency\": \"USDT\",\n            \"amount\": \"1\"\n        }\n    ]\n}"
+                "{\n    \"loanCurrency\": \"BTC\",\n    \"loanAmount\": \"0.1\",\n    \"collateralList\": [\n        {\n            \"currency\": \"USDT\",\n            \"amount\": \"1\"\n        },\n        {\n            \"currency\": \"ETH\",\n            \"amount\": \"1\"\n        }\n    ]\n}"
               )
           }
         })
@@ -755,7 +763,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -781,7 +789,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan-flexible/ongoing-coin",
           query: [loanCurrency: Keyword.get(opts, :loanCurrency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -811,7 +819,11 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
           body: %{
             mode: "raw",
             raw:
-              Keyword.get(opts, :body, "{\n    \"loanCurrency\": \"\",\n    \"amount\": \"1\"\n}")
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"loanCurrency\": \"BTC\",\n    \"amount\": \"1\"\n}"
+              )
           }
         })
 
@@ -844,7 +856,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"loanCurrency\": \"\",\n    \"collateralCoin\": \"\",\n    \"amount\": \"1\"\n}"
+                "{\n    \"loanCurrency\": \"USDT\",\n    \"collateralCoin\": \"BTC\",\n    \"amount\": \"1\"\n}"
               )
           }
         })
@@ -879,7 +891,7 @@ defmodule Bybit.API.OpenApiV5.NewCryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

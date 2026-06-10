@@ -168,7 +168,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
           base_url: base_url,
           url: "/v5/rfq/config",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -233,7 +233,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"counterparties\": [],\n    \"rfqLinkId\": \"123456\",\n    \"anonymous\": false,\n    \"strategyType\": \"custom\",\n    \"list\": [\n        {\n            \"category\": \"spot\",\n            \"symbol\": \"BTCUSDT\",\n            \"side\": \"Buy\",\n            \"qty\": \"1\"\n        }\n    ]\n}"
+                "{\n    \"counterparties\": [\n        \"LP4\",\n        \"LP5\"\n    ],\n    \"rfqLinkId\": \"123456\",\n    \"anonymous\": false,\n    \"strategyType\": \"custom\",\n    \"list\": [\n        {\n            \"category\": \"spot\",\n            \"symbol\": \"BTCUSDT\",\n            \"side\": \"Buy\",\n            \"qty\": \"1\"\n        },\n        {\n            \"category\": \"spot\",\n            \"symbol\": \"BTCUSDT\",\n            \"side\": \"buy\",\n            \"qty\": \"2\"\n        },\n        {\n            \"category\": \"option\",\n            \"symbol\": \"BTCUSDT\",\n            \"side\": \"sell\",\n            \"qty\": \"2\"\n        }\n    ]\n}"
               )
           }
         })
@@ -298,7 +298,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -333,7 +333,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -367,7 +367,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             quoteLinkId: Keyword.get(opts, :quoteLinkId),
             traderType: Keyword.get(opts, :traderType)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -400,7 +400,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -433,7 +433,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             rfqLinkId: Keyword.get(opts, :rfqLinkId),
             traderType: Keyword.get(opts, :traderType)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -468,7 +468,7 @@ defmodule Bybit.API.OpenApiV5.Rfq do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

@@ -118,7 +118,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
           base_url: base_url,
           url: "/v5/broker/account-info",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -150,7 +150,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -186,7 +186,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -216,7 +216,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
             cursor: Keyword.get(opts, :cursor),
             uids: Keyword.get(opts, :uids)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -241,7 +241,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
           base_url: base_url,
           url: "/v5/broker/apilimit/query-cap",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -273,7 +273,7 @@ defmodule Bybit.API.OpenApiV5.Broker do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"list\": [\n        {\n            \"uids\": \"\",\n            \"bizType\": \"\",\n            \"rate\": 0\n        }\n    ]\n}"
+                "{\n    \"list\": [\n        {\n            \"uids\": \"290118\",\n            \"bizType\": \"SPOT\",\n            \"rate\": 0\n        }\n    ]\n}"
               )
           }
         })
@@ -307,7 +307,64 @@ defmodule Bybit.API.OpenApiV5.Broker do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_broker_ip_change_log_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Broker IP Change Log
+  Method: GET
+  Path: /v5/broker/ip/changelog
+  Requires signature: false
+  Optional: startTime, endTime, limit, cursor
+  """
+  def get_broker_ip_change_log_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/broker/ip/changelog",
+          query: [
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_broker_whitelist_ip_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Broker Whitelist IP
+  Method: GET
+  Path: /v5/broker/whitelist/ip
+  Requires signature: false
+  """
+  def get_broker_whitelist_ip_v5(client) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/broker/whitelist/ip",
+          query: [],
+          headers: [],
           body: nil
         })
 

@@ -36,7 +36,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
             page: page,
             limit: limit
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -44,14 +44,14 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec demo_trading_service_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec demo_trading_service_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
   Demo Trading Service
   Method: POST
   Path: /v5/account/demo-apply-money
   Requires signature: true
   """
-  def demo_trading_service_v5(client, opts \\ []) do
+  def demo_trading_service_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -62,15 +62,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           url: "/v5/account/demo-apply-money",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{
-            mode: "raw",
-            raw:
-              Keyword.get(
-                opts,
-                :body,
-                "{\n    \"adjustType\": 0,\n    \"utaDemoApplyMoney\": [\n        {\n            \"coin\": \"USDT\",\n            \"amountStr\": \"BTC\"\n        }\n    ]\n}"
-              )
-          }
+          body: nil
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -95,7 +87,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           base_url: base_url,
           url: "/v5/system/status",
           query: [id: Keyword.get(opts, :id), state: Keyword.get(opts, :state)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -103,14 +95,14 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
     end
   end
 
-  @spec sign_agreement_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec tradfi_integration_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
   @doc """
-  Sign Agreement
+  TradFi Integration
   Method: POST
   Path: /v5/user/agreement
   Requires signature: true
   """
-  def sign_agreement_v5(client, opts \\ []) do
+  def tradfi_integration_v5(client) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -121,15 +113,7 @@ defmodule Bybit.API.OpenApiV5.OpenApiV5EnglishStandard do
           url: "/v5/user/agreement",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{
-            mode: "raw",
-            raw:
-              Keyword.get(
-                opts,
-                :body,
-                "{\n    \"category\": 0,\n    \"categoryV2\": 0,\n    \"agree\": false\n}"
-              )
-          }
+          body: nil
         })
 
       Bybit.REST.HTTPClient.request(request)

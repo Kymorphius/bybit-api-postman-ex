@@ -34,7 +34,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             lowerPrice: lowerPrice,
             upperPrice: upperPrice
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -61,7 +61,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/advance/get-redeem-est-amount-list",
           query: [category: category, positionIds: positionIds],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -77,7 +77,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Path: /v5/earn/advance/order
   Requires signature: true
   Required: category
-  Optional: productId, orderId, orderLinkId, startTime, endTime, limit, cursor
+  Optional: orderId, orderLinkId, productId, startTime, endTime, limit, cursor
   """
   def get_order_info_advance_order(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
@@ -90,15 +90,15 @@ defmodule Bybit.API.OpenApiV5.Finance do
           url: "/v5/earn/advance/order",
           query: [
             category: category,
-            productId: Keyword.get(opts, :productId),
             orderId: Keyword.get(opts, :orderId),
             orderLinkId: Keyword.get(opts, :orderLinkId),
+            productId: Keyword.get(opts, :productId),
             startTime: Keyword.get(opts, :startTime),
             endTime: Keyword.get(opts, :endTime),
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -131,7 +131,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"SmartLeverage\",\n    \"productId\": \"123456\",\n    \"orderType\": \"Stake\",\n    \"amount\": \"1\",\n    \"accountType\": \"FUND\",\n    \"coin\": \"USDT\",\n    \"orderLinkId\": \"123456\",\n    \"smartLeverageStakeExtra\": {\n        \"initialPrice\": \"currentPrice\",\n        \"breakevenPrice\": \"\"\n    },\n    \"smartLeverageRedeemExtra\": {\n        \"positionId\": \"123456\",\n        \"estRedeemAmount\": \"\",\n        \"isSlippageProtected\": \"estRedeemAmount\"\n    }\n}"
+                "{\n    \"category\": \"SmartLeverage\",\n    \"productId\": \"123456\",\n    \"orderType\": \"Stake\",\n    \"amount\": \"1\",\n    \"coin\": \"USDT\",\n    \"accountType\": \"FUND\",\n    \"orderLinkId\": \"123456\",\n    \"discountBuyExtra\": {\n        \"initialPrice\": \"74571.32\",\n        \"purchasePrice\": \"74019\",\n        \"knockoutPrice\": \"76050\",\n        \"knockoutCouponE8\": \"1000000\",\n        \"settleType\": \"Base\",\n        \"instUid\": \"100307526\"\n    }\n}"
               )
           }
         })
@@ -166,7 +166,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -182,7 +182,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
   Path: /v5/earn/advance/product
   Requires signature: true
   Required: category
-  Optional: coin, duration
+  Optional: coin
   """
   def get_product_info_advance_product(client, category, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
@@ -193,12 +193,8 @@ defmodule Bybit.API.OpenApiV5.Finance do
           method: "GET",
           base_url: base_url,
           url: "/v5/earn/advance/product",
-          query: [
-            category: category,
-            coin: Keyword.get(opts, :coin),
-            duration: Keyword.get(opts, :duration)
-          ],
-          headers: [{"Content-Type", "application/json"}],
+          query: [category: category, coin: Keyword.get(opts, :coin)],
+          headers: [],
           body: nil
         })
 
@@ -224,7 +220,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/advance/product-extra-info",
           query: [category: category, productId: productId],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -352,7 +348,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -389,7 +385,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -419,7 +415,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             productId: Keyword.get(opts, :productId),
             baseCoin: Keyword.get(opts, :baseCoin)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -449,7 +445,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             baseCoin: Keyword.get(opts, :baseCoin),
             quoteCoin: Keyword.get(opts, :quoteCoin)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -548,7 +544,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -581,7 +577,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             startTime: Keyword.get(opts, :startTime),
             endTime: Keyword.get(opts, :endTime)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -616,7 +612,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -653,7 +649,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -718,7 +714,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             productId: Keyword.get(opts, :productId),
             coin: Keyword.get(opts, :coin)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -779,7 +775,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/product",
           query: [category: category, coin: Keyword.get(opts, :coin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -814,7 +810,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -850,7 +846,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -915,7 +911,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             category: Keyword.get(opts, :category),
             coin: Keyword.get(opts, :coin)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -975,7 +971,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/fixed-term/product",
           query: [coin: Keyword.get(opts, :coin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -983,14 +979,15 @@ defmodule Bybit.API.OpenApiV5.Finance do
     end
   end
 
-  @spec redeem_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @spec redeem_fixed_term_redeem(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
   @doc """
   Redeem
   Method: POST
   Path: /v5/earn/fixed-term/redeem
   Requires signature: true
   """
-  def redeem_v5(client, opts \\ []) do
+  def redeem_fixed_term_redeem(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -1034,7 +1031,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/token/history-apr",
           query: [coin: coin, range: range],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1068,7 +1065,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             cursor: Keyword.get(opts, :cursor),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1105,7 +1102,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
             cursor: Keyword.get(opts, :cursor),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1166,7 +1163,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/token/position",
           query: [coin: coin],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1193,7 +1190,7 @@ defmodule Bybit.API.OpenApiV5.Finance do
           base_url: base_url,
           url: "/v5/earn/token/product",
           query: [coin: coin],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -1227,7 +1224,964 @@ defmodule Bybit.API.OpenApiV5.Finance do
             cursor: Keyword.get(opts, :cursor),
             limit: Keyword.get(opts, :limit)
           ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_airdrop_products_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Airdrop Products
+  Method: GET
+  Path: /v5/earn/hold-to-earn/product
+  Requires signature: false
+  """
+  def get_airdrop_products_v5(client) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/hold-to-earn/product",
+          query: [],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_airdrop_daily_pnl_records_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Airdrop Daily PnL Records
+  Method: GET
+  Path: /v5/earn/hold-to-earn/yield-history
+  Requires signature: false
+  Required: limit
+  Optional: timeStart, timeEnd, cursor
+  """
+  def get_airdrop_daily_pnl_records_v5(client, limit, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/hold-to-earn/yield-history",
+          query: [
+            timeStart: Keyword.get(opts, :timeStart),
+            timeEnd: Keyword.get(opts, :timeEnd),
+            limit: limit,
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_all_funds_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get All Funds
+  Method: GET
+  Path: /v5/earn/pwm/asset-manager/all-funds
+  Requires signature: false
+  Optional: coin, fundId, status, limit, cursor
+  """
+  def get_all_funds_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/all-funds",
+          query: [
+            coin: Keyword.get(opts, :coin),
+            fundId: Keyword.get(opts, :fundId),
+            status: Keyword.get(opts, :status),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_all_fund_orders_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get All Fund Orders
+  Method: GET
+  Path: /v5/earn/pwm/asset-manager/all-order
+  Requires signature: false
+  Optional: fundId, orderType, status, startTime, endTime, limit, cursor
+  """
+  def get_all_fund_orders_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/all-order",
+          query: [
+            fundId: Keyword.get(opts, :fundId),
+            orderType: Keyword.get(opts, :orderType),
+            status: Keyword.get(opts, :status),
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec create_fund_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Create Fund
+  Variant: Pending Subscription
+  Tags: pending_subscription
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/create-fund
+  Requires signature: false
+  """
+  def create_fund_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/create-fund",
+          query: [],
           headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"fundName\": \"BTC Alpha Fund\",\n    \"coin\": \"BTC\",\n    \"profitShareRate\": \"20.00\",\n    \"managementFeeRate\": \"2.00\",\n    \"fundIntroduction\": \"\",\n    \"reqLinkId\": \"create-fund-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec create_investment_plan_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Create Investment Plan
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/create-investment-plan
+  Requires signature: false
+  """
+  def create_investment_plan_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/create-investment-plan",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"accountUid\": \"800001\",\n    \"planName\": \"Conservative Growth Plan\",\n    \"planType\": \"stable\",\n    \"investmentDistribution\": [\n        {\n            \"productId\": \"12345\",\n            \"amount\": \"100000.00\"\n        }\n    ],\n    \"reqLinkId\": \"create-plan-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec create_fund_sub_account_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Create Fund Sub-Account
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/create-sub-account
+  Requires signature: false
+  """
+  def create_fund_sub_account_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/create-sub-account",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"fundId\": \"100001\",\n    \"reqLinkId\": \"create-sub-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_investment_plans_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Investment Plans
+  Method: GET
+  Path: /v5/earn/pwm/asset-manager/get-investment-plan
+  Requires signature: false
+  Optional: planId, status, subscriptionUid, limit, cursor
+  """
+  def get_investment_plans_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/get-investment-plan",
+          query: [
+            planId: Keyword.get(opts, :planId),
+            status: Keyword.get(opts, :status),
+            subscriptionUid: Keyword.get(opts, :subscriptionUid),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec manage_investment_plan_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Manage Investment Plan
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/manage-investment-plan
+  Requires signature: false
+  """
+  def manage_investment_plan_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/manage-investment-plan",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"planId\": \"10088\",\n    \"updateStatus\": \"Closed\",\n    \"updateFunds\": [\n        {\n            \"fundId\": \"430\",\n            \"amount\": \"100000\"\n        },\n        {\n            \"fundId\": \"2005\",\n            \"amount\": \"270000\"\n        }\n    ],\n    \"reqLinkId\": \"manage-plan-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec manage_order_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Manage Order
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/manage-order
+  Requires signature: false
+  """
+  def manage_order_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/manage-order",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"orderId\": \"500002\",\n    \"action\": \"approve\",\n    \"reqLinkId\": \"manage-order-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec settle_fund_profit_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Settle Fund Profit
+  Method: POST
+  Path: /v5/earn/pwm/asset-manager/settle-profit
+  Requires signature: false
+  """
+  def settle_fund_profit_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/asset-manager/settle-profit",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"fundId\": \"12323\",\n    \"reqLinkId\": \"settle-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec create_customize_investment_plan_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Create Customize Investment Plan
+  Method: POST
+  Path: /v5/earn/pwm/customize-plan/create
+  Requires signature: false
+  """
+  def create_customize_investment_plan_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/customize-plan/create",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"accountType\": \"FUND\",\n    \"products\": [\n        {\n            \"category\": \"equityFund\",\n            \"productId\": \"2001\",\n            \"fundName\": \"Market Neutral Alpha\",\n            \"amount\": \"100000.00\"\n        },\n        {\n            \"category\": \"multiCoinEarning\",\n            \"productId\": \"430\",\n            \"fundName\": \"\",\n            \"amount\": \"50000.00\"\n        }\n    ]\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_subscribable_product_info_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Subscribable Product Info
+  Method: GET
+  Path: /v5/earn/pwm/customize-plan/product
+  Requires signature: false
+  """
+  def get_subscribable_product_info_v5(client) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/customize-plan/product",
+          query: [],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec fund_transfer_between_sub_accounts_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Fund Transfer Between Sub-Accounts
+  Method: POST
+  Path: /v5/earn/pwm/fund-transfer
+  Requires signature: false
+  """
+  def fund_transfer_between_sub_accounts_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/fund-transfer",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"transferId\": \"4fdf-re-4343-frewr\",\n    \"fromUserId\": \"800001\",\n    \"toUserId\": \"800002\",\n    \"amount\": \"1.00\",\n    \"coin\": \"BTC\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_all_investment_plans_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get All Investment Plans
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/all
+  Requires signature: false
+  Optional: planId, status, limit, cursor
+  """
+  def get_all_investment_plans_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/all",
+          query: [
+            planId: Keyword.get(opts, :planId),
+            status: Keyword.get(opts, :status),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_asset_trend_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Asset Trend
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/asset-trend
+  Requires signature: false
+  Required: planId
+  Optional: startTime, endTime
+  """
+  def get_asset_trend_v5(client, planId, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/asset-trend",
+          query: [
+            planId: planId,
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec claim_withdrawable_funds_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Claim Withdrawable Funds
+  Method: POST
+  Path: /v5/earn/pwm/investment-plan/claim
+  Requires signature: false
+  """
+  def claim_withdrawable_funds_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/claim",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"planId\": \"10001\",\n    \"toAccountType\": \"FUND\",\n    \"orderLinkId\": \"claim-order-001\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_investment_plan_detail_v5(Bybit.Client.t(), term()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Investment Plan Detail
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/detail
+  Requires signature: false
+  Required: planId
+  """
+  def get_investment_plan_detail_v5(client, planId) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/detail",
+          query: [planId: planId],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_fund_historical_nav_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Fund Historical NAV
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/fund-nav
+  Requires signature: false
+  Required: fundId
+  Optional: startTime, endTime
+  """
+  def get_fund_historical_nav_v5(client, fundId, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/fund-nav",
+          query: [
+            fundId: fundId,
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec invest_more_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Invest More
+  Method: POST
+  Path: /v5/earn/pwm/investment-plan/invest-more
+  Requires signature: false
+  """
+  def invest_more_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/invest-more",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"planId\": \"10001\",\n    \"accountType\": \"FUND\",\n    \"category\": \"equityFund\",\n    \"productId\": \"2001\",\n    \"amount\": \"20000.00\",\n    \"orderLinkId\": \"xxx\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_pending_investment_plan_detail_v5(Bybit.Client.t(), term()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Pending Investment Plan Detail
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/new-plan
+  Requires signature: false
+  Required: planId
+  """
+  def get_pending_investment_plan_detail_v5(client, planId) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/new-plan",
+          query: [planId: planId],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_investment_plan_orders_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Investment Plan Orders
+  Method: GET
+  Path: /v5/earn/pwm/investment-plan/order
+  Requires signature: false
+  Optional: planId, category, type, status, startTime, endTime, limit, cursor, orderLinkId
+  """
+  def get_investment_plan_orders_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/order",
+          query: [
+            planId: Keyword.get(opts, :planId),
+            category: Keyword.get(opts, :category),
+            type: Keyword.get(opts, :type),
+            status: Keyword.get(opts, :status),
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor),
+            orderLinkId: Keyword.get(opts, :orderLinkId)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec redeem_investment_plan_redeem(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Redeem
+  Method: POST
+  Path: /v5/earn/pwm/investment-plan/redeem
+  Requires signature: false
+  """
+  def redeem_investment_plan_redeem(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/redeem",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"planId\": \"10001\",\n    \"category\": \"equityFund\",\n    \"productId\": \"2001\",\n    \"shares\": \"3000\",\n    \"amount\": \"1\",\n    \"orderLinkId\": \"xxx\",\n    \"positionId\": \"123456\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec subscribe_investment_plan_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Subscribe Investment Plan
+  Method: POST
+  Path: /v5/earn/pwm/investment-plan/subscribe
+  Requires signature: false
+  """
+  def subscribe_investment_plan_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/pwm/investment-plan/subscribe",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"planId\": \"10001\",\n    \"accountType\": \"FUND\",\n    \"orderLinkId\": \"xxx\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_fund_transfer_records_v5(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Fund Transfer Records
+  Method: GET
+  Path: /v5/earn/pwm/query-fund-transfer-result
+  Requires signature: false
+  Optional: transferId, fromUserId
+  """
+  def get_fund_transfer_records_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/pwm/query-fund-transfer-result",
+          query: [
+            transferId: Keyword.get(opts, :transferId),
+            fromUserId: Keyword.get(opts, :fromUserId)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_nav_chart_v5(Bybit.Client.t(), term(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get NAV Chart
+  Method: GET
+  Path: /v5/earn/rwa/nav-chart
+  Requires signature: false
+  Required: productId
+  Optional: startTime, endTime
+  """
+  def get_nav_chart_v5(client, productId, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/rwa/nav-chart",
+          query: [
+            productId: productId,
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_order_list_rwa_order(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Get Order List
+  Method: GET
+  Path: /v5/earn/rwa/order
+  Requires signature: false
+  Optional: orderId, orderLinkId, orderType, productId, startTime, endTime, limit, cursor
+  """
+  def get_order_list_rwa_order(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/rwa/order",
+          query: [
+            orderId: Keyword.get(opts, :orderId),
+            orderLinkId: Keyword.get(opts, :orderLinkId),
+            orderType: Keyword.get(opts, :orderType),
+            productId: Keyword.get(opts, :productId),
+            startTime: Keyword.get(opts, :startTime),
+            endTime: Keyword.get(opts, :endTime),
+            limit: Keyword.get(opts, :limit),
+            cursor: Keyword.get(opts, :cursor)
+          ],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec place_order_rwa_place_order(Bybit.Client.t(), Keyword.t()) ::
+          {:ok, term()} | {:error, term()}
+  @doc """
+  Place Order
+  Method: POST
+  Path: /v5/earn/rwa/place-order
+  Requires signature: false
+  """
+  def place_order_rwa_place_order(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "POST",
+          base_url: base_url,
+          url: "/v5/earn/rwa/place-order",
+          query: [],
+          headers: [{"Content-Type", "application/json"}],
+          body: %{
+            mode: "raw",
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"productId\": 1001,\n    \"orderType\": \"Stake\",\n    \"coin\": \"USDC\",\n    \"orderLinkId\": \"my-stake-001\",\n    \"stakeAmount\": \"100\",\n    \"redeemShares\": \"orderType=Redeem\",\n    \"accountType\": \"FUND\"\n}"
+              )
+          }
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_position_list_v5(Bybit.Client.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Position List
+  Method: GET
+  Path: /v5/earn/rwa/position
+  Requires signature: false
+  """
+  def get_position_list_v5(client) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/rwa/position",
+          query: [],
+          headers: [],
+          body: nil
+        })
+
+      Bybit.REST.HTTPClient.request(request)
+    end
+  end
+
+  @spec get_product_list_v5(Bybit.Client.t(), Keyword.t()) :: {:ok, term()} | {:error, term()}
+  @doc """
+  Get Product List
+  Method: GET
+  Path: /v5/earn/rwa/product
+  Requires signature: false
+  Optional: coin
+  """
+  def get_product_list_v5(client, opts \\ []) do
+    with {:ok, base_url} <- base_url(client.env) do
+      {:ok, request} =
+        Bybit.RequestBuilder.build(%{
+          client: client,
+          requires_signature?: false,
+          method: "GET",
+          base_url: base_url,
+          url: "/v5/earn/rwa/product",
+          query: [coin: Keyword.get(opts, :coin)],
+          headers: [],
           body: nil
         })
 

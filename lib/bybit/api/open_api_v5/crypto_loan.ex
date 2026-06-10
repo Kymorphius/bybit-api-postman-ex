@@ -36,7 +36,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -63,7 +63,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan/max-collateral-amount",
           query: [orderId: orderId],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -96,7 +96,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -122,7 +122,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan/collateral-data",
           query: [vipLevel: Keyword.get(opts, :vipLevel), currency: Keyword.get(opts, :currency)],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -155,7 +155,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -282,7 +282,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan/borrowable-collateralisable-number",
           query: [loanCurrency: loanCurrency, collateralCurrency: collateralCurrency],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -308,7 +308,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
           base_url: base_url,
           url: "/v5/crypto-loan/loanable-data",
           query: [vipLevel: Keyword.get(opts, :vipLevel), currency: Keyword.get(opts, :currency)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -341,7 +341,7 @@ defmodule Bybit.API.OpenApiV5.CryptoLoan do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

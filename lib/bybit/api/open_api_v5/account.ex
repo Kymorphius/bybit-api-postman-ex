@@ -30,7 +30,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/wallet-balance",
           query: [accountType: accountType, coin: Keyword.get(opts, :coin)],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -56,7 +56,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/asset/coin-greeks",
           query: [baseCoin: baseCoin],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -82,7 +82,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/collateral-info",
           query: [currency: currency],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -107,7 +107,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/info",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -138,7 +138,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             symbol: Keyword.get(opts, :symbol),
             baseCoin: Keyword.get(opts, :baseCoin)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -146,18 +146,18 @@ defmodule Bybit.API.OpenApiV5.Account do
     end
   end
 
-  @spec get_transaction_log_account_account_transaction_log(Bybit.Client.t(), Keyword.t()) ::
+  @spec get_transaction_log_transaction_log_account_transaction_log(Bybit.Client.t(), Keyword.t()) ::
           {:ok, term()} | {:error, term()}
   @doc """
   Get Transaction Log
-  Variant: Account
-  Tags: account
+  Variant: Transaction Log
+  Tags: transaction_log
   Method: GET
   Path: /v5/account/transaction-log
   Requires signature: true
   Optional: accountType, category, currency, baseCoin, type, transSubType, startTime, endTime, limit, cursor
   """
-  def get_transaction_log_account_account_transaction_log(client, opts \\ []) do
+  def get_transaction_log_transaction_log_account_transaction_log(client, opts \\ []) do
     with {:ok, base_url} <- base_url(client.env) do
       {:ok, request} =
         Bybit.RequestBuilder.build(%{
@@ -178,7 +178,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -220,7 +220,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -252,7 +252,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -337,7 +337,7 @@ defmodule Bybit.API.OpenApiV5.Account do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"baseCoin\": \"BTC\",\n    \"window\": \"5000\",\n    \"frozenPeriod\": \"100000\",\n    \"qtyLimit\": \"0.01\",\n    \"deltaLimit\": \"0.01\"\n}"
+                "{\n    \"baseCoin\": \"BTC\",\n    \"window\": \"5000\",\n    \"frozenPeriod\": \"100000\",\n    \"qtyLimit\": \"0.01\",\n    \"deltaLimit\": \"0.01\",\n    \"vegaLimit\": \"500000\"\n}"
               )
           }
         })
@@ -422,7 +422,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/query-dcp-info",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -447,7 +447,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/smp-group",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -473,7 +473,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/mmp-state",
           query: [baseCoin: baseCoin],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -534,7 +534,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -593,7 +593,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/option-asset-info",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -619,7 +619,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/pay-info",
           query: [coin: Keyword.get(opts, :coin)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -743,7 +743,7 @@ defmodule Bybit.API.OpenApiV5.Account do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"request\": [\n        {\n            \"coin\": \"USDT\",\n            \"collateralSwitch\": \"ON\"\n        }\n    ]\n}"
+                "{\n    \"request\": [\n        {\n            \"coin\": \"USDT\",\n            \"collateralSwitch\": \"ON\"\n        },\n        {\n            \"coin\": \"BTC\",\n            \"collateralSwitch\": \"OFF\"\n        },\n        {\n            \"coin\": \"ETH\",\n            \"collateralSwitch\": \"OFF\"\n        },\n        {\n            \"coin\": \"SOL\",\n            \"collateralSwitch\": \"OFF\"\n        }\n    ]\n}"
               )
           }
         })
@@ -771,7 +771,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           url: "/v5/account/set-delta-mode",
           query: [],
           headers: [{"Content-Type", "application/json"}],
-          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"deltaEnable\": \"\"\n}")}
+          body: %{mode: "raw", raw: Keyword.get(opts, :body, "{\n    \"deltaEnable\": \"1\"\n}")}
         })
 
       Bybit.REST.HTTPClient.request(request)
@@ -864,7 +864,7 @@ defmodule Bybit.API.OpenApiV5.Account do
             startTime: Keyword.get(opts, :startTime),
             endTime: Keyword.get(opts, :endTime)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -889,7 +889,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/user-setting-config",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -917,7 +917,7 @@ defmodule Bybit.API.OpenApiV5.Account do
           base_url: base_url,
           url: "/v5/account/withdrawal",
           query: [coinName: coinName],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
