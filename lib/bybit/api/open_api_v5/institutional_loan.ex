@@ -27,7 +27,7 @@ defmodule Bybit.API.OpenApiV5.InstitutionalLoan do
           base_url: base_url,
           url: "/v5/ins-loan/ltv",
           query: [],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 

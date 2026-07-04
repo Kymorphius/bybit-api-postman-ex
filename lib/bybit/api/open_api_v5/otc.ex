@@ -28,7 +28,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
           base_url: base_url,
           url: "/v5/ins-loan/ensure-tokens-convert",
           query: [productId: Keyword.get(opts, :productId)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -59,7 +59,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
             endTime: Keyword.get(opts, :endTime),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -84,7 +84,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
           base_url: base_url,
           url: "/v5/ins-loan/ltv-convert",
           query: [],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -110,7 +110,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
           base_url: base_url,
           url: "/v5/ins-loan/product-infos",
           query: [productId: Keyword.get(opts, :productId)],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -140,7 +140,7 @@ defmodule Bybit.API.OpenApiV5.Otc do
             endTime: Keyword.get(opts, :endTime),
             limit: Keyword.get(opts, :limit)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -168,7 +168,12 @@ defmodule Bybit.API.OpenApiV5.Otc do
           headers: [{"Content-Type", "application/json"}],
           body: %{
             mode: "raw",
-            raw: Keyword.get(opts, :body, "{\n    \"token\": \"\",\n    \"quantity\": \"\"\n}")
+            raw:
+              Keyword.get(
+                opts,
+                :body,
+                "{\n    \"token\": \"USDT\",\n    \"quantity\": \"500000\"\n}"
+              )
           }
         })
 

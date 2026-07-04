@@ -63,7 +63,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
             pageSize: Keyword.get(opts, :pageSize),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
@@ -100,7 +100,7 @@ defmodule Bybit.API.OpenApiV5.Strategy do
             pageSize: Keyword.get(opts, :pageSize),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 

@@ -37,7 +37,7 @@ defmodule Bybit.API.OpenApiV5.Position do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -136,7 +136,7 @@ defmodule Bybit.API.OpenApiV5.Position do
               Keyword.get(
                 opts,
                 :body,
-                "{\n    \"category\": \"linear\",\n    \"symbol\": \"BTCUSDT\",\n    \"tpslMode\": \"Full\",\n    \"positionIdx\": 0,\n    \"takeProfit\": \"20000\",\n    \"stopLoss\": \"10000\",\n    \"trailingStop\": \"\",\n    \"tpTriggerBy\": \"LastPrice\",\n    \"slTriggerBy\": \"LastPrice\",\n    \"activePrice\": \"\",\n    \"tpSize\": \"\",\n    \"slSize\": \"\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\"\n}"
+                "{\n    \"category\": \"linear\",\n    \"symbol\": \"BTCUSDT\",\n    \"tpslMode\": \"Full\",\n    \"positionIdx\": 0,\n    \"takeProfit\": \"20000\",\n    \"stopLoss\": \"10000\",\n    \"trailingStop\": \"\",\n    \"tpTriggerBy\": \"LastPrice\",\n    \"slTriggerBy\": \"LastPrice\",\n    \"activePrice\": \"1\",\n    \"tpSize\": \"50\",\n    \"slSize\": \"50\",\n    \"tpLimitPrice\": \"1\",\n    \"slLimitPrice\": \"1\",\n    \"tpOrderType\": \"Market\",\n    \"slOrderType\": \"Market\"\n}"
               )
           }
         })
@@ -238,7 +238,7 @@ defmodule Bybit.API.OpenApiV5.Position do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -373,7 +373,7 @@ defmodule Bybit.API.OpenApiV5.Position do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"X-BAPI-SIGN-TYPE", "2"}, {"Content-Type", "application/json"}],
+          headers: [{"X-BAPI-SIGN-TYPE", "2"}],
           body: nil
         })
 
@@ -475,7 +475,7 @@ defmodule Bybit.API.OpenApiV5.Position do
             limit: Keyword.get(opts, :limit),
             cursor: Keyword.get(opts, :cursor)
           ],
-          headers: [{"Content-Type", "application/json"}],
+          headers: [],
           body: nil
         })
 
